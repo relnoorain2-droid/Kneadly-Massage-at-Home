@@ -5,7 +5,7 @@ import Foundation
 enum AppBrand {
     static let name = "Kneadly"
     static let tagline = "Good hands, guided."
-    static let bundleID = "com.kneadly.app"
+    static let bundleID = "com.kneadly-Massage.app"
     static let supportEmail = "support@kneadly.app"
     static let privacyURL = URL(string: "https://kneadly.app/privacy")!
     static let termsURL = URL(string: "https://kneadly.app/terms")!

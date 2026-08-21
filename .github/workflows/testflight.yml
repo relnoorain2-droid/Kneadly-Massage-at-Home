@@ -31,7 +31,7 @@ jobs:
 
     env:
       SCHEME: Kneadly
-      BUNDLE_ID: com.kneadly.app
+      BUNDLE_ID: com.kneadly-Massage.app
 
     steps:
       - uses: actions/checkout@v4

@@ -35,7 +35,7 @@ git push -u origin main
 
 **2. Run "Build check" in the Actions tab.** No Apple credentials needed. This is the first time the code is actually compiled — see the honest note below. Get it green before anything else.
 
-**3. Do the Apple setup.** Runbook §2: register the App ID `com.kneadly.app`, create the app record, create the three subscription products, generate an App Store Connect API key. About 30 minutes.
+**3. Do the Apple setup.** Runbook §2: register the App ID `com.kneadly-Massage.app`, create the app record, create the three subscription products, generate an App Store Connect API key. About 30 minutes.
 
 **4. Add four secrets and run "TestFlight".** Runbook §3–4. The build lands in TestFlight in about 15 minutes.
 

@@ -13,7 +13,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.kneadly.app.plus.lifetime",
+      "productID" : "com.kneadlymassage.app.plus.lifetime",
       "referenceName" : "Plus Lifetime",
       "type" : "NonConsumable"
     }
@@ -43,7 +43,7 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.kneadly.app.plus.monthly",
+          "productID" : "com.kneadlymassage.app.plus.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Plus Monthly",
           "subscriptionGroupID" : "21500001",
@@ -67,7 +67,7 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.kneadly.app.plus.annual",
+          "productID" : "com.kneadlymassage.app.plus.annual",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Plus Annual",
           "subscriptionGroupID" : "21500001",

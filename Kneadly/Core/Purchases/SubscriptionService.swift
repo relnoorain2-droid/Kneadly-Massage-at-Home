@@ -7,9 +7,9 @@ import Observation
 final class SubscriptionService {
 
     enum PlanID: String, CaseIterable {
-        case monthly = "com.kneadly.app.plus.monthly"
-        case annual  = "com.kneadly.app.plus.annual"
-        case lifetime = "com.kneadly.app.plus.lifetime"
+        case monthly = "com.kneadlymassage.app.plus.monthly"
+        case annual  = "com.kneadlymassage.app.plus.annual"
+        case lifetime = "com.kneadlymassage.app.plus.lifetime"
 
         var displayName: String {
             switch self {

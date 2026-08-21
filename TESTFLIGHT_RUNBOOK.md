@@ -37,7 +37,7 @@ You will **not** need: a Mac, Xcode, certificates you generate by hand, or `.p12
 1. Go to **developer.apple.com** → Account → **Certificates, Identifiers & Profiles** → **Identifiers** → **+**
 2. Choose **App IDs** → **App**
 3. Description: `Kneadly`
-4. Bundle ID: **Explicit** → `com.kneadly.app`
+4. Bundle ID: **Explicit** → `com.kneadly-Massage.app`
 5. Capabilities: leave everything **off**. This app needs none.
 6. Register.
 
@@ -49,7 +49,7 @@ You will **not** need: a Mac, Xcode, certificates you generate by hand, or `.p12
 2. Platform: **iOS**
 3. Name: `Kneadly` — this must be globally unique across the App Store. If it's taken, pick another and update `AppBrand.name`.
 4. Primary language: English (U.K.) or (U.S.)
-5. Bundle ID: pick `com.kneadly.app` from the list
+5. Bundle ID: pick `com.kneadly-Massage.app` from the list
 6. SKU: `KNEADLY001` (internal only, any string)
 7. User Access: Full Access
 8. Create.
@@ -62,9 +62,9 @@ First create a **subscription group** called `Kneadly Plus`, then inside it:
 
 | Product ID | Type | Duration | Price | Notes |
 |-----------|------|----------|-------|-------|
-| `com.kneadly.app.plus.monthly` | Auto-renewable | 1 month | $9.99 | — |
-| `com.kneadly.app.plus.annual` | Auto-renewable | 1 year | $49.99 | Add a **7-day free trial** introductory offer |
-| `com.kneadly.app.plus.lifetime` | Non-consumable | — | $99.99 | Created under In-App Purchases, not the group |
+| `com.kneadlymassage.app.plus.monthly` | Auto-renewable | 1 month | $9.99 | — |
+| `com.kneadlymassage.app.plus.annual` | Auto-renewable | 1 year | $49.99 | Add a **7-day free trial** introductory offer |
+| `com.kneadlymassage.app.plus.lifetime` | Non-consumable | — | $99.99 | Created under In-App Purchases, not the group |
 
 Turn **Family Sharing ON** for all three. This is a two-person app — making a couple buy it twice reads as hostile and will show up in your reviews.
 
@@ -147,7 +147,7 @@ Once processing completes:
 
 | Error contains | What it means | Fix |
 |---|---|---|
-| `No profiles for 'com.kneadly.app' were found` | Xcode couldn't create a profile | Check `APPLE_TEAM_ID` is right and the App ID from 2.1 exists with that exact bundle ID |
+| `No profiles for 'com.kneadly-Massage.app' were found` | Xcode couldn't create a profile | Check `APPLE_TEAM_ID` is right and the App ID from 2.1 exists with that exact bundle ID |
 | `Authentication credentials are missing or invalid` | API key problem | Re-paste `APP_STORE_CONNECT_PRIVATE_KEY` — the header/footer lines are usually what got lost |
 | `No signing certificate "Apple Distribution" found` | The API key lacks permission | The key needs **App Manager** access, not Developer |
 | `Provisioning profile ... doesn't include signing certificate` | Stale state on Apple's side | Re-run the workflow; automatic signing will recreate it |
