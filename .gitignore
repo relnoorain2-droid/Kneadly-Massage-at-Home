@@ -1,0 +1,36 @@
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+!*.xcodeproj/project.pbxproj
+build/
+DerivedData/
+*.xcarchive
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# XcodeGen generates the project; project.yml is the source of truth
+Kneadly.xcodeproj/
+
+# Photography is fetched by Scripts/fetch_assets.sh, not committed
+Kneadly/Resources/Photos/*
+!Kneadly/Resources/Photos/.gitkeep
+Kneadly/Resources/CREDITS.json
+
+# Signing — never commit these
+*.p8
+*.p12
+*.mobileprovision
+*.cer
+*.certSigningRequest
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+vendor/bundle
+.bundle
+
+# macOS
+.DS_Store

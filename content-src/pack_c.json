@@ -1,0 +1,2983 @@
+{
+  "routines": [
+    {
+      "id": "back.partner.basics",
+      "title": "Back Basics",
+      "subtitle": "A calm, whole-back massage anyone can give.",
+      "regionIDs": [
+        "upperBack",
+        "lowerBack"
+      ],
+      "mode": "partner",
+      "level": "beginner",
+      "durationSeconds": 720,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "proneBed",
+      "needs": [
+        "A bed or firm mat",
+        "Two large towels",
+        "A pillow for under their ankles",
+        "Oil or lotion optional"
+      ],
+      "skipIf": [
+        "pregnancy",
+        "recentSurgeryOrFracture",
+        "skinConditionOrWound"
+      ],
+      "coverImage": "img.reg.back",
+      "coverPlaceholderHex": "#B98F76",
+      "isPremium": false,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Let them lie still for a minute before they get up. Offer water and keep their back warm. Nothing heavy for the next half hour.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "back.partner.basics.s01",
+            "back.partner.basics.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "back.partner.basics.s03",
+            "back.partner.basics.s04",
+            "back.partner.basics.s05",
+            "back.partner.basics.s06",
+            "back.partner.basics.s07",
+            "back.partner.basics.s08"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "back.partner.basics.s09",
+            "back.partner.basics.s10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neck.partner.reset",
+      "title": "Neck & Shoulder Reset",
+      "subtitle": "Release the tension screens put in your shoulders.",
+      "regionIDs": [
+        "shouldersUpperTrap",
+        "neck"
+      ],
+      "mode": "partner",
+      "level": "beginner",
+      "durationSeconds": 720,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "seatedChairReversed",
+      "needs": [
+        "A chair",
+        "Towel",
+        "Oil optional"
+      ],
+      "skipIf": [
+        "recentNeckInjury"
+      ],
+      "coverImage": "img.reg.shoulder",
+      "coverPlaceholderHex": "#C9A188",
+      "isPremium": false,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Sit up slowly. Drink some water. Nothing heavy for the next half hour.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "neck.partner.reset.s01",
+            "neck.partner.reset.s02",
+            "neck.partner.reset.s03"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "neck.partner.reset.s04",
+            "neck.partner.reset.s05",
+            "neck.partner.reset.s06",
+            "neck.partner.reset.s07",
+            "neck.partner.reset.s08"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "neck.partner.reset.s09",
+            "neck.partner.reset.s10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scalp.partner.winddown",
+      "title": "Scalp & Head Wind-Down",
+      "subtitle": "An Indian head massage that ends in sleep.",
+      "regionIDs": [
+        "scalp",
+        "suboccipitals",
+        "face"
+      ],
+      "mode": "partner",
+      "level": "beginner",
+      "durationSeconds": 420,
+      "minPressure": 1,
+      "maxPressure": 3,
+      "position": "supine",
+      "needs": [
+        "A bed or mat",
+        "A pillow",
+        "A towel under their head",
+        "Hair oil optional"
+      ],
+      "skipIf": [
+        "recentNeckInjury",
+        "skinConditionOrWound"
+      ],
+      "coverImage": "img.reg.head",
+      "coverPlaceholderHex": "#C2A58E",
+      "isPremium": false,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Let them lie there as long as they like. If you used oil, shampoo it out before adding water. Keep the lights low and the phones away.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "scalp.partner.winddown.s01",
+            "scalp.partner.winddown.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "scalp.partner.winddown.s03",
+            "scalp.partner.winddown.s04",
+            "scalp.partner.winddown.s05",
+            "scalp.partner.winddown.s06",
+            "scalp.partner.winddown.s07"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "scalp.partner.winddown.s08",
+            "scalp.partner.winddown.s09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upperback.partner.knots",
+      "title": "Upper Back Knot Hunt",
+      "subtitle": "Find the knots between the shoulder blades and hold them.",
+      "regionIDs": [
+        "upperBack",
+        "shouldersUpperTrap"
+      ],
+      "mode": "partner",
+      "level": "intermediate",
+      "durationSeconds": 840,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "proneBed",
+      "needs": [
+        "A bed or firm mat",
+        "Two large towels",
+        "A pillow for under their ankles",
+        "Oil or lotion"
+      ],
+      "skipIf": [
+        "recentSurgeryOrFracture",
+        "osteoporosis",
+        "skinConditionOrWound"
+      ],
+      "coverImage": "img.reg.back.alt",
+      "coverPlaceholderHex": "#A8836B",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "A worked-over knot can ache for a day, a bit like after the gym — that is normal. Water, a warm shower, and no heavy lifting tonight.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "upperback.partner.knots.s01",
+            "upperback.partner.knots.s02",
+            "upperback.partner.knots.s03"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "upperback.partner.knots.s04",
+            "upperback.partner.knots.s05",
+            "upperback.partner.knots.s06",
+            "upperback.partner.knots.s07",
+            "upperback.partner.knots.s08",
+            "upperback.partner.knots.s09"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "upperback.partner.knots.s10",
+            "upperback.partner.knots.s11"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lowerback.partner.relief",
+      "title": "Lower Back & Hip Relief",
+      "subtitle": "Start at the hips, because that is usually the cause.",
+      "regionIDs": [
+        "glutesHips",
+        "lowerBack"
+      ],
+      "mode": "partner",
+      "level": "intermediate",
+      "durationSeconds": 900,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "proneBed",
+      "needs": [
+        "A bed or firm mat",
+        "Two large towels",
+        "A pillow for under their hips",
+        "Oil or lotion"
+      ],
+      "skipIf": [
+        "pregnancy",
+        "recentSurgeryOrFracture",
+        "osteoporosis",
+        "dvtOrBloodThinners"
+      ],
+      "coverImage": "img.reg.prone",
+      "coverPlaceholderHex": "#A8836B",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Ask them to roll onto their side before sitting up. Water, a slow short walk, and no heavy lifting today. A little tenderness tomorrow is normal.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "lowerback.partner.relief.s01",
+            "lowerback.partner.relief.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "lowerback.partner.relief.s03",
+            "lowerback.partner.relief.s04",
+            "lowerback.partner.relief.s05",
+            "lowerback.partner.relief.s06",
+            "lowerback.partner.relief.s07",
+            "lowerback.partner.relief.s08",
+            "lowerback.partner.relief.s09"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "lowerback.partner.relief.s10",
+            "lowerback.partner.relief.s11"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "foot.partner.ritual",
+      "title": "Foot Ritual",
+      "subtitle": "Warm towels, slow thumbs, both feet, no rushing.",
+      "regionIDs": [
+        "foot",
+        "calfShin"
+      ],
+      "mode": "partner",
+      "level": "beginner",
+      "durationSeconds": 720,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "supine",
+      "needs": [
+        "A warm damp towel",
+        "A dry towel",
+        "A pillow for under their knees",
+        "Oil or balm optional"
+      ],
+      "skipIf": [
+        "diabetesNeuropathy",
+        "skinConditionOrWound",
+        "dvtOrBloodThinners"
+      ],
+      "coverImage": "img.reg.foot",
+      "coverPlaceholderHex": "#C2A58E",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Their feet will be slippery — dry them properly before they stand up. Water, warm socks, and stay off hard floors for a while.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "foot.partner.ritual.s01",
+            "foot.partner.ritual.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "foot.partner.ritual.s03",
+            "foot.partner.ritual.s04",
+            "foot.partner.ritual.s05",
+            "foot.partner.ritual.s06",
+            "foot.partner.ritual.s07",
+            "foot.partner.ritual.s08"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "foot.partner.ritual.s09",
+            "foot.partner.ritual.s10"
+          ]
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "back.partner.basics.s01",
+      "regionID": "upperBack",
+      "techniqueID": "staticHold",
+      "title": "Cover them and settle",
+      "body": "Lay a towel over their whole back. Rest both palms on top of it and take three slow breaths together.",
+      "sensationCue": "Warmth soaking through the towel. Nothing moving yet.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Still — no movement",
+      "breathCue": "Both of you: breathe out slowly",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.26
+          ],
+          [
+            0.5,
+            0.28
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Lay a towel over their whole back, then rest both palms on top of it. Do not move at all yet. Take three slow breaths together and let them settle into the bed.",
+      "commonMistake": "Don't start rubbing straight away. The pause is the point.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s02",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Long glides up the back",
+      "body": "Fold the towel down to their waist and warm oil in your hands. Glide both palms up beside the spine, out over the shoulders, then lightly back down.",
+      "sensationCue": "Smooth, warm and unhurried. Nothing sharp, nothing scratchy.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 90,
+      "rhythm": "One long stroke every six seconds",
+      "breathCue": "They breathe out as you glide up",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.4
+          ],
+          [
+            0.5,
+            0.3
+          ],
+          [
+            0.5,
+            0.22
+          ],
+          [
+            0.63,
+            0.2
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Fold the towel down to their waist and warm a little oil between your hands first. Glide both palms up either side of the spine, out across the shoulders, and lightly back down. Keep it slow — this is how their body learns your hands.",
+      "commonMistake": "Cold hands and cold oil. Warm both first.",
+      "caution": "Stay on the muscle either side of the spine, never on the spine itself.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s03",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Warm the whole back in circles",
+      "body": "Sweep both palms in wide circles over the whole back, moving up and outward. Keep your hands soft and touching them the whole time.",
+      "sensationCue": "Broad, even warmth spreading across the back.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 60,
+      "rhythm": "Slow, wide circles",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.3
+          ],
+          [
+            0.5,
+            0.24
+          ],
+          [
+            0.58,
+            0.3
+          ],
+          [
+            0.5,
+            0.36
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Now sweep both palms in wide circles across the whole back, working up and outward. Keep some part of your hands on them at all times. Breaking contact is what makes a massage feel choppy.",
+      "commonMistake": "Lifting your hands between strokes. Stay in contact.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s04",
+      "regionID": "upperBack",
+      "techniqueID": "friction",
+      "title": "Thumb circles beside the spine",
+      "body": "Set your thumbs in the grooves either side of the spine, up near the neck. Make small slow circles, walking down one thumb-width at a time.",
+      "sensationCue": "Small tight spots softening under steady pressure. Never sharp.",
+      "handPosition": "doubleThumb",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Three circles, then move down",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.22
+          ],
+          [
+            0.46,
+            0.3
+          ],
+          [
+            0.46,
+            0.38
+          ]
+        ],
+        "motion": "circle",
+        "loop": false
+      },
+      "voiceScript": "Find the two long grooves either side of their spine and set your thumbs in them, up near the neck. Make small, slow circles and walk down a thumb-width at a time. Never press on the spine itself — always on the muscle beside it.",
+      "commonMistake": "Digging with the thumb tip. Use the flat pad instead.",
+      "caution": "Never press on the spine itself. Stay in the muscle either side of it.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s05",
+      "regionID": "upperBack",
+      "techniqueID": "deepTissue",
+      "title": "Lean into the long muscles",
+      "body": "Place the heel of one hand on the ropey muscle beside the spine. Lean your body weight in slowly and travel down it, pausing where it feels tight.",
+      "sensationCue": "Deep and dull, like a good stretch. Never burning or electric.",
+      "handPosition": "palmHeel",
+      "pressure": 4,
+      "durationSeconds": 90,
+      "rhythm": "Move a hand's width every five seconds",
+      "breathCue": "They breathe out as you sink in",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.24
+          ],
+          [
+            0.44,
+            0.32
+          ],
+          [
+            0.44,
+            0.4
+          ]
+        ],
+        "motion": "press",
+        "loop": false
+      },
+      "voiceScript": "Put the heel of one hand on the long ropey muscle beside their spine. Instead of pushing with your arm, lean your body weight in slowly and let it sink. Travel down a hand's width at a time and pause anywhere that feels tight.",
+      "commonMistake": "Pushing with your arms. Lean with your body instead.",
+      "caution": "Ease off if they hold their breath or tense up. Deeper is not better.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s06",
+      "regionID": "upperBack",
+      "techniqueID": "myofascial",
+      "title": "Glide with your forearm",
+      "body": "Turn one forearm flat and glide it slowly from the low back up beside the spine to the shoulder. Keep your arm soft, not bony.",
+      "sensationCue": "Broad, heavy, spread-out pressure. Never a sharp edge.",
+      "handPosition": "forearm",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "One slow pass every ten seconds",
+      "breathCue": "Both of you: breathe out",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.4
+          ],
+          [
+            0.45,
+            0.3
+          ],
+          [
+            0.45,
+            0.22
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Turn one forearm flat and lay it beside their spine, down near the low back. Glide slowly up to the shoulder using your body weight rather than your shoulder muscles. Keep the soft part of your arm on them — the point of the elbow stays off.",
+      "commonMistake": "Leading with the elbow. Use the soft, fleshy part.",
+      "caution": "Keep the point of your elbow off them, and stay clear of the spine.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s07",
+      "regionID": "upperBack",
+      "techniqueID": "petrissage",
+      "title": "Knead the sides of the back",
+      "body": "Scoop the soft muscle along their side between your thumb and fingers. Squeeze, lift and roll it like dough, working up and down each side.",
+      "sensationCue": "A deep, satisfying squeeze. It should never pinch the skin.",
+      "handPosition": "cGrip",
+      "pressure": 3,
+      "durationSeconds": 75,
+      "rhythm": "Hand over hand, steady and rhythmic",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.38,
+            0.3
+          ],
+          [
+            0.38,
+            0.36
+          ],
+          [
+            0.38,
+            0.42
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Move to the soft muscle along the side of their back, just above the waist. Scoop it up between your thumb and fingers, squeeze, lift a little, and roll it the way you would knead dough. Work up and down, then change sides.",
+      "commonMistake": "Grabbing skin only. Take the whole handful of muscle.",
+      "caution": "Stay well clear of the armpit and of the chest at the front.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s08",
+      "regionID": "lowerBack",
+      "techniqueID": "effleurage",
+      "title": "Light circles over the low back",
+      "body": "Move down to the low back and make slow, light circles with flat palms. Stay gentle in the soft area just below the ribs.",
+      "sensationCue": "Light and warm. Nothing deep or poking in this area.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 75,
+      "rhythm": "Slow circles, no pressing",
+      "breathCue": "They breathe out as you circle",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.38
+          ],
+          [
+            0.5,
+            0.42
+          ],
+          [
+            0.56,
+            0.38
+          ],
+          [
+            0.5,
+            0.34
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Slide down to the low back and make slow, light circles with flat palms. Stay soft here — the kidneys sit in that padded area just below the ribs, so it never wants deep pressure. Warm it, do not dig into it.",
+      "commonMistake": "Going deep here because it feels soft. Keep it light.",
+      "caution": "Keep pressure light over the soft area below the ribs — the kidneys sit there.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s09",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Rake lightly down the back",
+      "body": "Draw your fingertips slowly down their back, one hand after the other. Make each pass a little lighter than the last.",
+      "sensationCue": "Shivery and calming, like the session is closing.",
+      "handPosition": "fingertips",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Alternating hands, slower each pass",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.2
+          ],
+          [
+            0.5,
+            0.3
+          ],
+          [
+            0.5,
+            0.42
+          ]
+        ],
+        "motion": "rake",
+        "loop": true
+      },
+      "voiceScript": "Now rake your fingertips slowly down their back, one hand after the other. Make every pass lighter than the one before, until you are barely touching them. This is how you tell their body the massage is ending.",
+      "commonMistake": "Scratching with your nails. Use the pads of your fingers.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "back.partner.basics.s10",
+      "regionID": "upperBack",
+      "techniqueID": "staticHold",
+      "title": "Cover them and rest",
+      "body": "Draw the towel back up over their whole back. Rest both palms on top, take three slow breaths, then lift your hands away slowly.",
+      "sensationCue": "Stillness and warmth. Don't rush this part.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Still — no movement",
+      "breathCue": "Three slow breaths together",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.28
+          ],
+          [
+            0.5,
+            0.3
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Draw the towel back up over their whole back and rest both palms on top of it. Take three slow breaths together, then lift your hands away as slowly as you can. Let them lie there a minute before they move.",
+      "commonMistake": "Whipping your hands away at the end. Leave slowly.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s01",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "staticHold",
+      "title": "Rest your hands and breathe",
+      "body": "Place both palms flat on their shoulders. Don't move — take three slow breaths together.",
+      "sensationCue": "Warmth spreading. Their shoulders drop.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 30,
+      "rhythm": "Still — no movement",
+      "breathCue": "Both of you: breathe out slowly",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.18
+          ],
+          [
+            0.58,
+            0.19
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Start by resting both palms flat on their shoulders. Don't move at all. Just take three slow breaths together and let them settle.",
+      "commonMistake": "Don't start rubbing straight away. The pause is the point.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s02",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "effleurage",
+      "title": "Long strokes down the back",
+      "body": "Glide both palms from the base of the neck out across the shoulders and down the upper arms. Return lightly.",
+      "sensationCue": "Smooth, warm, unhurried. Nothing sharp.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 75,
+      "rhythm": "One long stroke every six seconds",
+      "breathCue": "They breathe out as you glide",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "shoulders",
+        "arms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.16
+          ],
+          [
+            0.63,
+            0.2
+          ],
+          [
+            0.69,
+            0.27
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Glide both palms from the base of their neck, out across the shoulders, and down the upper arms. Let the return trip be feather light. Repeat it until the strokes start to feel easy.",
+      "commonMistake": "Rushing the return. It is part of the stroke.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s03",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "effleurage",
+      "title": "Warm the whole shoulder",
+      "body": "Sweep in wide circles over both shoulder blades, moving upward and outward. Keep your palms flat and soft.",
+      "sensationCue": "The muscle starting to soften and warm.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 60,
+      "rhythm": "Slow, wide circles",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "shoulders",
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.22
+          ],
+          [
+            0.5,
+            0.26
+          ],
+          [
+            0.6,
+            0.22
+          ],
+          [
+            0.5,
+            0.2
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Sweep both palms in wide circles over the shoulder blades, moving upward and outward. Keep them flat and soft. You are warming the muscle, not working it yet.",
+      "commonMistake": "Circling too small and too fast. Go wide and slow.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s04",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "petrissage",
+      "title": "Squeeze and roll the muscle",
+      "body": "Grip the top of the shoulder between your thumb and fingers. Squeeze, lift slightly, and roll — like kneading dough.",
+      "sensationCue": "A deep, satisfying ache that eases as you work.",
+      "handPosition": "pincerGrip",
+      "pressure": 3,
+      "durationSeconds": 105,
+      "rhythm": "Hand over hand, steady and rhythmic",
+      "breathCue": "They breathe out as you squeeze",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.19
+          ],
+          [
+            0.45,
+            0.18
+          ],
+          [
+            0.55,
+            0.18
+          ],
+          [
+            0.6,
+            0.19
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Grip the ridge of muscle on top of the shoulder between your thumb and fingers. Squeeze, lift it slightly, and roll it, just like kneading dough. Work both sides and ask them how the pressure feels.",
+      "commonMistake": "Pinching with fingertips. Use the whole hand.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s05",
+      "regionID": "neck",
+      "techniqueID": "friction",
+      "title": "Thumb circles beside the spine",
+      "body": "Place your thumbs either side of the spine at the base of the neck. Make slow, small circles, walking down one thumb-width at a time.",
+      "sensationCue": "Small tight spots that soften under steady pressure.",
+      "handPosition": "doubleThumb",
+      "pressure": 3,
+      "durationSeconds": 105,
+      "rhythm": "Three circles, then move down",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "neck",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.47,
+            0.17
+          ],
+          [
+            0.47,
+            0.22
+          ],
+          [
+            0.47,
+            0.27
+          ]
+        ],
+        "motion": "circle",
+        "loop": false
+      },
+      "voiceScript": "Set your thumbs either side of the spine at the base of their neck. Make slow, small circles, walking down one thumb-width at a time. Never on the spine itself — always the muscle beside it.",
+      "commonMistake": "Working straight down the middle. The muscle is either side.",
+      "caution": "Never on the spine itself. Stay on the muscle either side of it.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": [
+        "recentNeckInjury"
+      ]
+    },
+    {
+      "id": "neck.partner.reset.s06",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "triggerPoint",
+      "title": "Find and hold the knot",
+      "body": "Feel for the tightest spot on the top of the shoulder. Press straight down and hold still for thirty seconds each side — don't rub.",
+      "sensationCue": "A strong ache that fades by about half while you hold.",
+      "handPosition": "thumbPad",
+      "pressure": 4,
+      "durationSeconds": 75,
+      "rhythm": "Still — hold, don't move",
+      "breathCue": "They breathe out as you press in",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.19
+          ],
+          [
+            0.43,
+            0.19
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Feel around the top of the shoulder for the tightest spot, the one that feels like a firm marble. Press straight down into it and hold completely still for thirty seconds, then do the other side. Do not rub — stillness is what lets it let go.",
+      "commonMistake": "Rubbing the knot. Holding still is what releases it.",
+      "caution": "Ease off if the ache grows instead of fading, or if it shoots down the arm.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s07",
+      "regionID": "suboccipitals",
+      "techniqueID": "staticHold",
+      "title": "Release the base of the skull",
+      "body": "Curl your fingertips up under the bony ridge at the base of their skull. Let the weight of their head rest on your fingers and hold.",
+      "sensationCue": "A melting, spreading release up into the head.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 75,
+      "rhythm": "Still — let the head hang",
+      "breathCue": "Long slow breaths out",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "neck",
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.14
+          ],
+          [
+            0.5,
+            0.15
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Curl your fingertips up under the bony ridge at the base of their skull. Do not push — just let the weight of their head rest down onto your fingers, and hold there. Give it a full minute; this one takes time.",
+      "commonMistake": "Pushing upward. Let their own head weight do the work.",
+      "caution": "Work only on the bony ridge at the back. Never press on the front or sides of the throat.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": [
+        "recentNeckInjury"
+      ]
+    },
+    {
+      "id": "neck.partner.reset.s08",
+      "regionID": "neck",
+      "techniqueID": "stretch",
+      "title": "Lengthen the side of the neck",
+      "body": "One hand rests on top of their head, the other on the opposite shoulder. Gently ease the head sideways, hold twenty seconds, then swap.",
+      "sensationCue": "A long, comfortable stretch — a pull, never a pinch.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 75,
+      "rhythm": "Ease in over five seconds, hold, ease out",
+      "breathCue": "They breathe out as the head eases over",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "neck",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.13
+          ],
+          [
+            0.44,
+            0.16
+          ],
+          [
+            0.4,
+            0.19
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Rest one hand on top of their head and the other on the opposite shoulder. Ease the head gently sideways until they feel a long stretch, hold about twenty seconds, then bring it back and swap sides. Never force it — the stretch should feel like a pull, never a pinch.",
+      "commonMistake": "Pulling on the head. Anchor the shoulder and let gravity do it.",
+      "caution": "Never force it. Stop at once if they feel pinching, tingling or dizziness.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": [
+        "recentNeckInjury"
+      ]
+    },
+    {
+      "id": "neck.partner.reset.s09",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Light raking down the back",
+      "body": "Rake your fingertips slowly from the neck down the back, alternating hands. Get lighter with every pass.",
+      "sensationCue": "Shivery, calming, like the session is closing.",
+      "handPosition": "fingertips",
+      "pressure": 1,
+      "durationSeconds": 60,
+      "rhythm": "Alternating hands, slower each pass",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "neck",
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.17
+          ],
+          [
+            0.5,
+            0.26
+          ],
+          [
+            0.5,
+            0.34
+          ]
+        ],
+        "motion": "rake",
+        "loop": true
+      },
+      "voiceScript": "Rake your fingertips slowly from their neck down the back, one hand following the other. Make each pass lighter than the one before. This tells their body that the massage is ending.",
+      "commonMistake": "Scratching with your nails. Use the pads of your fingers.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "neck.partner.reset.s10",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "staticHold",
+      "title": "Rest and finish",
+      "body": "Rest both palms on their shoulders again. Take three slow breaths, then lift your hands away slowly.",
+      "sensationCue": "Stillness. Don't rush this part.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 30,
+      "rhythm": "Still — no movement",
+      "breathCue": "Three slow breaths together",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.18
+          ],
+          [
+            0.58,
+            0.19
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Rest both palms flat on their shoulders one more time. Take three slow breaths together, then lift your hands away as slowly as you can. Let them sit for a moment before they stand up.",
+      "commonMistake": "Whipping your hands away at the end. Leave slowly.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s01",
+      "regionID": "scalp",
+      "techniqueID": "staticHold",
+      "title": "Settle behind their head",
+      "body": "Sit behind their head and rest both palms on their shoulders. Take three slow breaths together before anything moves.",
+      "sensationCue": "Warmth and weight. Nothing moving yet.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 40,
+      "rhythm": "Still — no movement",
+      "breathCue": "Both of you: breathe out slowly",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "shoulders",
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.18
+          ],
+          [
+            0.58,
+            0.18
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Sit yourself behind their head with a pillow supporting their neck. Rest both palms on their shoulders and take three slow breaths together. Nothing happens until they have settled.",
+      "commonMistake": "Starting at the head. Settle the shoulders first.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s02",
+      "regionID": "face",
+      "techniqueID": "effleurage",
+      "title": "Smooth the forehead",
+      "body": "Lay both thumbs in the middle of their forehead. Draw them slowly out to the temples, then start again a little higher each time.",
+      "sensationCue": "A slow, ironing-out feeling across the brow.",
+      "handPosition": "thumbPad",
+      "pressure": 2,
+      "durationSeconds": 45,
+      "rhythm": "One slow sweep every five seconds",
+      "breathCue": "They breathe out as you sweep",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.08
+          ],
+          [
+            0.44,
+            0.08
+          ],
+          [
+            0.56,
+            0.08
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Lay both thumbs flat in the middle of their forehead, just above the brow. Draw them slowly out toward the temples, then lift, move up a little, and go again. Keep well away from their eyes.",
+      "commonMistake": "Dragging the skin. Move slowly with a flat thumb.",
+      "caution": "Stay on the forehead and temples. Never press on or near the eyes.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s03",
+      "regionID": "face",
+      "techniqueID": "friction",
+      "title": "Small circles at the temples",
+      "body": "Set your fingertips on the flat spot beside each eyebrow. Make slow circles there, about one every two seconds.",
+      "sensationCue": "A soft, spreading ease across the brow. Never sharp.",
+      "handPosition": "fingertips",
+      "pressure": 2,
+      "durationSeconds": 45,
+      "rhythm": "One slow circle every two seconds",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.09
+          ],
+          [
+            0.6,
+            0.09
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Find the flat, slightly soft spot beside each eyebrow and rest your fingertips there. Make slow circles, about one every two seconds. Light pressure is plenty here.",
+      "commonMistake": "Pressing hard on the temples. Light and slow works better.",
+      "caution": "Keep well away from the eyes themselves.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s04",
+      "regionID": "scalp",
+      "techniqueID": "indianHead",
+      "title": "Shampoo the whole scalp",
+      "body": "Spread your fingers and move the scalp itself over the bone, like a slow shampoo. Work all over the head, not just the top.",
+      "sensationCue": "The whole scalp loosening and tingling. Never a hair pull.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "Slow circles, a new patch every few seconds",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.06
+          ],
+          [
+            0.5,
+            0.05
+          ],
+          [
+            0.56,
+            0.06
+          ],
+          [
+            0.5,
+            0.1
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Spread your fingers and place the pads on their scalp. Rather than sliding over the hair, move the scalp itself over the bone underneath, like a slow shampoo. Cover the sides and the back too, not just the top.",
+      "commonMistake": "Sliding over the hair. Move the skin, not your fingers.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s05",
+      "regionID": "scalp",
+      "techniqueID": "indianHead",
+      "title": "Lift and hold the hair",
+      "body": "Take a soft handful of hair close to the roots. Lift into a steady, even pull for five seconds, let go, then take another handful.",
+      "sensationCue": "A surprising release across the whole scalp. Never a sting.",
+      "handPosition": "pincerGrip",
+      "pressure": 2,
+      "durationSeconds": 45,
+      "rhythm": "Five seconds on, then move",
+      "breathCue": "They breathe out as you lift",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.48,
+            0.06
+          ],
+          [
+            0.52,
+            0.06
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Gather a soft handful of hair close to the roots, so the pull spreads across a wide patch of scalp. Lift into a steady, even pull for about five seconds, then release and gather another handful. It should feel like a release, never a sting.",
+      "commonMistake": "Grabbing a small tuft. Take a wide, soft handful.",
+      "caution": "Never yank or twist. If it stings, you are holding too little hair.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s06",
+      "regionID": "suboccipitals",
+      "techniqueID": "staticHold",
+      "title": "Cradle the base of the skull",
+      "body": "Slide your fingertips under the bony ridge at the base of their skull. Let the head rest down onto them and hold still.",
+      "sensationCue": "A melting, spreading release up into the head.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "Still — let the head hang",
+      "breathCue": "Long slow breaths out",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "neck",
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.14
+          ],
+          [
+            0.5,
+            0.15
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Slide your fingertips under the bony ridge right at the base of their skull. Do not push up — let the weight of their head settle down onto your fingers and simply hold. A full minute here is worth more than any amount of rubbing.",
+      "commonMistake": "Pushing upward. Let their head weight do the work.",
+      "caution": "Support the head the whole time. Never press on the front or sides of the throat.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": [
+        "recentNeckInjury"
+      ]
+    },
+    {
+      "id": "scalp.partner.winddown.s07",
+      "regionID": "ears",
+      "techniqueID": "indianHead",
+      "title": "Rub the ears",
+      "body": "Hold the rim of one ear between your thumb and finger. Squeeze and rub slowly from the top down to the lobe, three times each side.",
+      "sensationCue": "A warm buzz that spreads out across the head.",
+      "handPosition": "pincerGrip",
+      "pressure": 2,
+      "durationSeconds": 45,
+      "rhythm": "One slow pass every five seconds",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.ear",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.38,
+            0.09
+          ],
+          [
+            0.38,
+            0.11
+          ]
+        ],
+        "motion": "walk",
+        "loop": true
+      },
+      "voiceScript": "Hold the outer rim of one ear between your thumb and finger. Squeeze gently and rub your way slowly from the top down to the lobe, three times, then do the other ear. Finish with a slow, steady squeeze of each earlobe.",
+      "commonMistake": "Poking into the ear canal. Stay on the outer rim.",
+      "caution": "Stay on the outside of the ear. Never put anything into the ear canal.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s08",
+      "regionID": "scalp",
+      "techniqueID": "effleurage",
+      "title": "Comb through the hair",
+      "body": "Run your fingers slowly through their hair from the front hairline to the back, one hand after the other. Get lighter each pass.",
+      "sensationCue": "Shivery and calming. The signal that it is ending.",
+      "handPosition": "fingertips",
+      "pressure": 1,
+      "durationSeconds": 40,
+      "rhythm": "Alternating hands, slower each pass",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.04
+          ],
+          [
+            0.5,
+            0.08
+          ],
+          [
+            0.5,
+            0.13
+          ]
+        ],
+        "motion": "rake",
+        "loop": true
+      },
+      "voiceScript": "Run your fingers slowly through their hair, from the front hairline all the way back, one hand following the other. Make each pass lighter than the one before. Slow it right down as you go.",
+      "commonMistake": "Catching on tangles. Start further back if the hair is knotted.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "scalp.partner.winddown.s09",
+      "regionID": "scalp",
+      "techniqueID": "staticHold",
+      "title": "Cradle their head and stay",
+      "body": "Cup both palms lightly around the sides of their head. Hold completely still for a full minute, then lift your hands away slowly.",
+      "sensationCue": "Deep stillness. Plenty of people fall asleep right here.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 60,
+      "rhythm": "Still — no movement at all",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.08
+          ],
+          [
+            0.54,
+            0.08
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Cup both palms lightly around the sides of their head, hands soft and heavy. Hold completely still for a full minute — longer if they have drifted off. Then lift your hands away so slowly they barely notice.",
+      "commonMistake": "Cutting the hold short. This minute is the best part.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s01",
+      "regionID": "upperBack",
+      "techniqueID": "staticHold",
+      "title": "Cover them and settle",
+      "body": "Lay a towel over their whole back and rest both palms on top. Take three slow breaths together, then ask where it has been tight.",
+      "sensationCue": "Warmth soaking through the towel. Nothing moving yet.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Still — no movement",
+      "breathCue": "Both of you: breathe out slowly",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.26
+          ],
+          [
+            0.5,
+            0.28
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Lay a towel over their whole back and rest both palms on top of it. Take three slow breaths together. While you are there, ask them where it has been bothering them — that is your map for the next ten minutes.",
+      "commonMistake": "Starting without asking. Their answer saves you five minutes.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s02",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Warm the back with long glides",
+      "body": "Fold the towel down to their waist and warm oil in your hands. Glide both palms up beside the spine and out over the shoulders, over and over.",
+      "sensationCue": "Smooth, warm and unhurried. Nothing sharp yet.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 105,
+      "rhythm": "One long stroke every six seconds",
+      "breathCue": "They breathe out as you glide up",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.38
+          ],
+          [
+            0.5,
+            0.3
+          ],
+          [
+            0.5,
+            0.22
+          ],
+          [
+            0.63,
+            0.2
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Fold the towel down to their waist and warm oil between your hands. Glide both palms up either side of the spine and out across the shoulders, then lightly back down. Give this a good two minutes — cold muscle does not give up its knots.",
+      "commonMistake": "Hunting for knots on cold muscle. Warm it properly first.",
+      "caution": "Stay on the muscle either side of the spine, never on the spine itself.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s03",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Circle both shoulder blades",
+      "body": "Sweep flat palms in wide circles around each shoulder blade, moving up and outward. Let the circles get slightly firmer.",
+      "sensationCue": "The muscle warming and starting to soften.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 60,
+      "rhythm": "Slow, wide circles",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "shoulders",
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.22
+          ],
+          [
+            0.5,
+            0.26
+          ],
+          [
+            0.58,
+            0.22
+          ],
+          [
+            0.5,
+            0.2
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Sweep flat palms in wide circles around each shoulder blade, moving upward and outward. Let the circles get a little firmer as you go. You are opening the area up before you go looking for anything.",
+      "commonMistake": "Going deep too soon. Firm up gradually.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s04",
+      "regionID": "upperBack",
+      "techniqueID": "friction",
+      "title": "Hunt for the tight spots",
+      "body": "Press slowly along the muscle between the spine and each shoulder blade. You are looking for a spot that feels like a firm marble under your thumb.",
+      "sensationCue": "A dull, familiar tenderness when you find one. Never sharp.",
+      "handPosition": "thumbPad",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Press, pause two seconds, move on",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "chest",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.21
+          ],
+          [
+            0.46,
+            0.25
+          ],
+          [
+            0.46,
+            0.29
+          ]
+        ],
+        "motion": "walk",
+        "loop": false
+      },
+      "voiceScript": "Press slowly along the band of muscle between the spine and the inner edge of each shoulder blade. You are feeling for a spot that is firmer than everything around it, like a marble under the skin. Ask them to say yes when you land on one.",
+      "commonMistake": "Pressing everywhere at once. Search slowly, one spot at a time.",
+      "caution": "Never press on the spine itself. Stay on the muscle beside it.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s05",
+      "regionID": "upperBack",
+      "techniqueID": "friction",
+      "title": "Thumb-walk between the blades",
+      "body": "Set both thumbs in the grooves either side of the spine. Make three small circles, then walk down one thumb-width and repeat.",
+      "sensationCue": "Tight bands softening under steady, patient pressure.",
+      "handPosition": "doubleThumb",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Three circles, then move down",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "chest",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.2
+          ],
+          [
+            0.46,
+            0.26
+          ],
+          [
+            0.46,
+            0.32
+          ]
+        ],
+        "motion": "circle",
+        "loop": false
+      },
+      "voiceScript": "Set both thumbs in the long grooves either side of the spine, up near the neck. Make three small slow circles, then walk down one thumb-width and repeat, all the way to the bottom of the shoulder blades. Use the flat pad of the thumb, never the tip.",
+      "commonMistake": "Digging with the thumb tip. Use the flat pad.",
+      "caution": "Never press on the spine itself. Stay in the muscle either side of it.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s06",
+      "regionID": "upperBack",
+      "techniqueID": "friction",
+      "title": "Work under the blade edge",
+      "body": "Ask them to rest that hand on their low back so the shoulder blade lifts. Hook your fingertips gently under the inner edge and circle.",
+      "sensationCue": "A deep, hidden ache that eases as you work. Never pinching.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Small circles, moving along the edge",
+      "breathCue": "They breathe out as you sink in",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "shoulders",
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.22
+          ],
+          [
+            0.44,
+            0.25
+          ],
+          [
+            0.44,
+            0.28
+          ]
+        ],
+        "motion": "circle",
+        "loop": false
+      },
+      "voiceScript": "Ask them to rest that hand on their low back, which lifts the inner edge of the shoulder blade away from the ribs. Hook your fingertips gently under that edge and make small circles along it. Swap arms and do the other side.",
+      "commonMistake": "Forcing the arm into place. If it is not comfy, skip it.",
+      "caution": "Only if their shoulder is comfortable there. Never push the arm into a position that hurts.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s07",
+      "regionID": "upperBack",
+      "techniqueID": "triggerPoint",
+      "title": "Press the knot and hold",
+      "body": "Press straight down into the knot and hold completely still for thirty seconds. Don't rub — wait for the ache to fade by about half.",
+      "sensationCue": "A strong, spreading ache that softens by half. Never electric.",
+      "handPosition": "thumbPad",
+      "pressure": 4,
+      "durationSeconds": 90,
+      "rhythm": "Still — thirty seconds a spot",
+      "breathCue": "Slow breaths out while you hold",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "chest",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.24
+          ],
+          [
+            0.46,
+            0.24
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Put your thumb pad on the knot and press straight down, to about a seven out of ten for them. Now hold completely still and count thirty seconds — no rubbing, no circling. The ache should fade by roughly half while you wait; if it does not, ease off and move on to the next spot.",
+      "commonMistake": "Rubbing the knot. Stillness is what lets it let go.",
+      "caution": "Ease off if the ache grows instead of fading, or if it shoots down the arm.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s08",
+      "regionID": "upperBack",
+      "techniqueID": "deepTissue",
+      "title": "Lean into the mid-back",
+      "body": "Place the heel of your hand beside the spine and lean your body weight in. Travel down slowly, pausing five seconds anywhere tight.",
+      "sensationCue": "Deep and dull, like a good stretch. Never burning.",
+      "handPosition": "palmHeel",
+      "pressure": 4,
+      "durationSeconds": 75,
+      "rhythm": "Move a hand's width every five seconds",
+      "breathCue": "They breathe out as you sink in",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.22
+          ],
+          [
+            0.44,
+            0.28
+          ],
+          [
+            0.44,
+            0.34
+          ]
+        ],
+        "motion": "press",
+        "loop": false
+      },
+      "voiceScript": "Place the heel of your hand on the muscle beside the spine and lean your body weight in rather than pushing with your arm. Travel down slowly, pausing about five seconds on anything that feels tight. Check in on pressure at least once.",
+      "commonMistake": "Pushing with your arms. Lean with your body instead.",
+      "caution": "Ease off if they hold their breath or tense up. Deeper is not better.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s09",
+      "regionID": "upperBack",
+      "techniqueID": "myofascial",
+      "title": "Glide across with your forearm",
+      "body": "Lay one forearm flat below the shoulder blade and glide it slowly up and out toward the shoulder. Keep your arm soft, not bony.",
+      "sensationCue": "Broad, heavy, spread-out pressure. Never a sharp edge.",
+      "handPosition": "forearm",
+      "pressure": 3,
+      "durationSeconds": 75,
+      "rhythm": "One slow pass every ten seconds",
+      "breathCue": "Both of you: breathe out",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "chest",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.32
+          ],
+          [
+            0.48,
+            0.26
+          ],
+          [
+            0.6,
+            0.21
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Lay one forearm flat on the back just below the shoulder blade. Glide slowly up and out toward the shoulder, letting your body weight do the pressing. Keep the soft part of your arm on them and the point of the elbow well off.",
+      "commonMistake": "Leading with the elbow. Use the soft, fleshy part.",
+      "caution": "Keep the point of your elbow off them, and stay clear of the spine.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s10",
+      "regionID": "upperBack",
+      "techniqueID": "effleurage",
+      "title": "Soothe the whole back",
+      "body": "Sweep both palms over the whole back a few times, then rake your fingertips slowly down it. Get lighter with every pass.",
+      "sensationCue": "Broad warmth turning into something shivery and calm.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 60,
+      "rhythm": "Slower and lighter each pass",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "chest",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.2
+          ],
+          [
+            0.5,
+            0.28
+          ],
+          [
+            0.5,
+            0.38
+          ]
+        ],
+        "motion": "rake",
+        "loop": true
+      },
+      "voiceScript": "Sweep both palms over the whole back a few times to smooth out everything you have just done. Then rake your fingertips slowly down from the neck, lighter with each pass. Deep work always deserves a soft finish.",
+      "commonMistake": "Stopping dead after deep work. Always smooth it out.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "upperback.partner.knots.s11",
+      "regionID": "upperBack",
+      "techniqueID": "staticHold",
+      "title": "Cover them and rest",
+      "body": "Draw the towel back up over their back. Rest both palms on top, breathe together three times, then lift your hands away slowly.",
+      "sensationCue": "Stillness and warmth. Don't rush this part.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 60,
+      "rhythm": "Still — no movement",
+      "breathCue": "Three slow breaths together",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.28
+          ],
+          [
+            0.5,
+            0.3
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Draw the towel back up over their back and rest both palms on top of it. Take three slow breaths together, then lift your hands away as slowly as you can. Tell them to stay put for a minute before they get up.",
+      "commonMistake": "Whipping your hands away at the end. Leave slowly.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s01",
+      "regionID": "lowerBack",
+      "techniqueID": "staticHold",
+      "title": "Cover them and settle",
+      "body": "Slide a pillow under their hips and lay a towel over their back and legs. Rest both palms on the low back and breathe together.",
+      "sensationCue": "Warmth soaking through the towel. The low back settling.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Still — no movement",
+      "breathCue": "Both of you: breathe out slowly",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.4
+          ],
+          [
+            0.5,
+            0.42
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Slide a pillow under their hips first — it takes the arch out of the low back and makes everything more comfortable. Lay a towel over their back and legs, rest both palms on the low back, and take three slow breaths together.",
+      "commonMistake": "Skipping the pillow. It makes the low back far happier.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s02",
+      "regionID": "lowerBack",
+      "techniqueID": "effleurage",
+      "title": "Warm the back and hips",
+      "body": "Fold the towel down to the top of the hips and warm oil in your hands. Glide broad flat palms from the low back out over the hips and back.",
+      "sensationCue": "Broad, even warmth. Nothing sharp, nothing sudden.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 105,
+      "rhythm": "One long stroke every six seconds",
+      "breathCue": "They breathe out as you glide",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.34
+          ],
+          [
+            0.5,
+            0.4
+          ],
+          [
+            0.42,
+            0.46
+          ],
+          [
+            0.58,
+            0.46
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Fold the towel down to the top of the hips and warm oil between your hands. Glide broad, flat palms from the low back out across the hips and back again. Spend a full two minutes here — this area needs to trust you before it lets go.",
+      "commonMistake": "Going straight to the sore spot. Warm the whole area first.",
+      "caution": "Keep pressure light over the soft area below the ribs — the kidneys sit there.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s03",
+      "regionID": "glutesHips",
+      "techniqueID": "effleurage",
+      "title": "Ask first, then warm the hip",
+      "body": "Ask out loud whether it is okay to work the glutes, and wait for a clear yes. Uncover one hip only, keep everything else covered, and circle slowly.",
+      "sensationCue": "Broad warmth over a big muscle. Nothing sudden.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 90,
+      "rhythm": "Slow, wide circles",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.46
+          ],
+          [
+            0.5,
+            0.48
+          ],
+          [
+            0.56,
+            0.46
+          ],
+          [
+            0.5,
+            0.44
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Before you touch this area, ask out loud whether it is okay to work the glutes, and wait for a clear yes. Uncover only the hip you are working and tuck the towel along the edge so everything else stays covered. Then warm the muscle with slow, wide palm circles.",
+      "commonMistake": "Assuming a yes from last time. Ask every session.",
+      "caution": "Stop the moment they ask you to, no questions. Everything you are not working stays covered.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s04",
+      "regionID": "glutesHips",
+      "techniqueID": "deepTissue",
+      "title": "Lean into the glute",
+      "body": "Lean the heel of your hand into the thick muscle of the glute and hold about ten seconds. Move a hand's width across and repeat.",
+      "sensationCue": "Deep, dull and satisfying. Never shooting or electric.",
+      "handPosition": "palmHeel",
+      "pressure": 4,
+      "durationSeconds": 90,
+      "rhythm": "Ten seconds a spot, then move",
+      "breathCue": "They breathe out as you sink in",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.45
+          ],
+          [
+            0.48,
+            0.48
+          ],
+          [
+            0.52,
+            0.46
+          ]
+        ],
+        "motion": "press",
+        "loop": false
+      },
+      "voiceScript": "Lean the heel of your hand into the thick part of the glute and let your body weight sink in for about ten seconds. Move a hand's width and do it again, covering the whole muscle. This is often where a grumpy low back actually starts.",
+      "commonMistake": "Rushing across it. Ten slow seconds a spot beats fast rubbing.",
+      "caution": "Stop if they feel shooting, burning or electric pain running down the leg.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s05",
+      "regionID": "glutesHips",
+      "techniqueID": "triggerPoint",
+      "title": "Hold the deep hip spot",
+      "body": "Find the tender spot midway between the top of the hip bone and the tailbone. Press in and hold completely still for thirty seconds.",
+      "sensationCue": "A strong ache that fades by about half while you hold.",
+      "handPosition": "thumbPad",
+      "pressure": 4,
+      "durationSeconds": 90,
+      "rhythm": "Still — thirty seconds a spot",
+      "breathCue": "Slow breaths out while you hold",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.46
+          ],
+          [
+            0.46,
+            0.46
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Feel for the tender spot roughly midway between the top of the hip bone and the tailbone, deep under the glute. Press in slowly and hold completely still for thirty seconds — no rubbing. The ache should fade by about half; if it spreads down the leg instead, come straight off it.",
+      "commonMistake": "Rubbing the spot. Stillness is what lets it let go.",
+      "caution": "The nerve to the leg runs under here. Ease off at once if pain shoots below the knee.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s06",
+      "regionID": "glutesHips",
+      "techniqueID": "petrissage",
+      "title": "Squeeze the top of the hip",
+      "body": "Scoop the muscle just below the waist and above the hip bone between your hands. Squeeze, lift and roll it slowly, side to side.",
+      "sensationCue": "A firm, satisfying squeeze. It should never pinch skin.",
+      "handPosition": "cGrip",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Hand over hand, steady and rhythmic",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "hips",
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.44
+          ],
+          [
+            0.44,
+            0.46
+          ],
+          [
+            0.48,
+            0.44
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Move to the soft area just below the waist and above the hip bone. Scoop a whole handful of muscle up between your hands, squeeze, lift and roll it slowly. Work side to side, then re-cover this hip and do the other one.",
+      "commonMistake": "Grabbing skin only. Take the whole handful of muscle.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s07",
+      "regionID": "lowerBack",
+      "techniqueID": "friction",
+      "title": "Thumb circles beside the low spine",
+      "body": "Re-cover the hips, then fold the towel down to show the low back. Circle your thumbs slowly in the grooves either side of the spine.",
+      "sensationCue": "Small tight bands softening under steady pressure.",
+      "handPosition": "doubleThumb",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Three circles, then move up",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.44
+          ],
+          [
+            0.46,
+            0.4
+          ],
+          [
+            0.46,
+            0.36
+          ]
+        ],
+        "motion": "circle",
+        "loop": false
+      },
+      "voiceScript": "Re-cover the hips before you move on, then fold the towel down so the low back is showing. Set your thumbs in the grooves either side of the spine and make small slow circles, walking upward a thumb-width at a time. Never on the spine itself.",
+      "commonMistake": "Working on the bony spine. The muscle is either side of it.",
+      "caution": "Never press on the spine itself. Stay in the muscle either side of it.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s08",
+      "regionID": "lowerBack",
+      "techniqueID": "deepTissue",
+      "title": "Lean into the low back muscles",
+      "body": "Place the heel of your hand on the ropey muscle beside the spine and lean in slowly. Keep it light in the soft area below the ribs.",
+      "sensationCue": "Deep and dull, like a good stretch. Never burning.",
+      "handPosition": "palmHeel",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Move a hand's width every five seconds",
+      "breathCue": "They breathe out as you sink in",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.42
+          ],
+          [
+            0.44,
+            0.38
+          ],
+          [
+            0.44,
+            0.34
+          ]
+        ],
+        "motion": "press",
+        "loop": false
+      },
+      "voiceScript": "Put the heel of your hand on the ropey muscle beside the spine and lean your body weight in slowly. Work up and down the low back, pausing where it feels tight. Go lighter as you get up under the ribs — the kidneys sit in that soft area.",
+      "commonMistake": "Pushing with your arms. Lean with your body instead.",
+      "caution": "Keep pressure light over the soft area below the ribs — the kidneys sit there.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s09",
+      "regionID": "lowerBack",
+      "techniqueID": "myofascial",
+      "title": "Glide out with your forearm",
+      "body": "Lay one forearm flat beside the spine and glide it slowly down and out across the top of the hip. Keep your arm soft, not bony.",
+      "sensationCue": "Broad, heavy, spread-out pressure. Never a sharp edge.",
+      "handPosition": "forearm",
+      "pressure": 3,
+      "durationSeconds": 75,
+      "rhythm": "One slow pass every ten seconds",
+      "breathCue": "Both of you: breathe out",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.36
+          ],
+          [
+            0.46,
+            0.42
+          ],
+          [
+            0.42,
+            0.46
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Lay one forearm flat on the muscle beside the spine, then glide slowly down and out across the top of the hip. Let your body weight do the pressing. Keep the soft part of your arm on them and the point of the elbow off.",
+      "commonMistake": "Leading with the elbow. Use the soft, fleshy part.",
+      "caution": "Keep the point of your elbow off them, and stay clear of the spine.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s10",
+      "regionID": "lowerBack",
+      "techniqueID": "effleurage",
+      "title": "Long soothing strokes",
+      "body": "Sweep both palms over the low back and hips a few times, then rake your fingertips slowly down. Lighter with every pass.",
+      "sensationCue": "Broad warmth turning into something shivery and calm.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 75,
+      "rhythm": "Slower and lighter each pass",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.32
+          ],
+          [
+            0.5,
+            0.4
+          ],
+          [
+            0.5,
+            0.47
+          ]
+        ],
+        "motion": "rake",
+        "loop": true
+      },
+      "voiceScript": "Sweep both palms over the low back and hips a few times to smooth out all the deep work. Then rake your fingertips slowly downward, lighter with each pass. Let it fade away rather than stopping dead.",
+      "commonMistake": "Stopping dead after deep work. Always smooth it out.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.partner.relief.s11",
+      "regionID": "lowerBack",
+      "techniqueID": "staticHold",
+      "title": "Cover them and rest",
+      "body": "Draw the towel back up over their back and hips. Rest both palms on the low back, breathe together, then lift your hands away slowly.",
+      "sensationCue": "Stillness and warmth. Don't rush this part.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Still — no movement",
+      "breathCue": "Three slow breaths together",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.4
+          ],
+          [
+            0.5,
+            0.42
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Draw the towel back up over their back and hips. Rest both palms on the low back and take three slow breaths together, then lift your hands away slowly. Ask them to roll onto their side before they sit up.",
+      "commonMistake": "Letting them sit straight up. Roll to the side first.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s01",
+      "regionID": "foot",
+      "techniqueID": "staticHold",
+      "title": "Wrap both feet in warm towels",
+      "body": "Wring out a warm damp towel and wrap it around both feet. Rest your hands on top and let the heat soak in.",
+      "sensationCue": "Deep warmth spreading up the feet. Warm, never hot.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 60,
+      "rhythm": "Still — no movement",
+      "breathCue": "Both of you: breathe out slowly",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.91
+          ],
+          [
+            0.6,
+            0.91
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Wring out a warm damp towel and wrap it right around both feet. Rest your hands on top and just let the heat soak in for a minute. Cover the rest of them with a blanket so they do not get cold.",
+      "commonMistake": "Skipping the towel. Warm feet give up their tension far faster.",
+      "caution": "Test the towel on your own wrist first. It should be warm, never hot.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s02",
+      "regionID": "foot",
+      "techniqueID": "effleurage",
+      "title": "Sandwich and stroke each foot",
+      "body": "Dry one foot and hold it between both palms. Stroke firmly from the toes up to the ankle, over and over, then swap feet.",
+      "sensationCue": "Warmth and blood coming into a cold foot.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 75,
+      "rhythm": "One firm stroke every three seconds",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.foot",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.94
+          ],
+          [
+            0.4,
+            0.9
+          ],
+          [
+            0.4,
+            0.86
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Dry one foot and hold it between both palms, one on the sole and one on top. Stroke firmly from the toes all the way up to the ankle, again and again. Add a little oil if you are using it, and give each foot the same time.",
+      "commonMistake": "Tickly, light touch. Firm pressure never tickles.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s03",
+      "regionID": "foot",
+      "techniqueID": "stretch",
+      "title": "Circle the ankle",
+      "body": "Cup the heel in one hand to hold it still. With your other hand, circle the foot slowly five times each way.",
+      "sensationCue": "Easy movement. No clicking, grinding or pinching.",
+      "handPosition": "cGrip",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "One slow circle every four seconds",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.foot.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.88
+          ],
+          [
+            0.43,
+            0.91
+          ],
+          [
+            0.4,
+            0.94
+          ],
+          [
+            0.37,
+            0.91
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Cup their heel in one hand so the ankle itself stays still. With your other hand around the forefoot, circle it slowly five times one way and five the other. Let the joint move only as far as it wants to.",
+      "commonMistake": "Cranking the foot around. Move only as far as it goes easily.",
+      "caution": "Never force the circle. Stop if anything pinches or grinds.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s04",
+      "regionID": "foot",
+      "techniqueID": "reflexology",
+      "title": "Thumb-walk the arch",
+      "body": "Press your thumb into the heel and walk it forward along the arch in tiny bites, like a caterpillar. Three passes on each foot.",
+      "sensationCue": "Tender spots that melt after a few seconds of pressure.",
+      "handPosition": "thumbPad",
+      "pressure": 3,
+      "durationSeconds": 105,
+      "rhythm": "Small bites, one a second",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.foot",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.94
+          ],
+          [
+            0.4,
+            0.92
+          ],
+          [
+            0.4,
+            0.89
+          ]
+        ],
+        "motion": "walk",
+        "loop": true
+      },
+      "voiceScript": "Press your thumb into the fleshy heel and walk it forward along the arch in tiny bites, bending and straightening the thumb like a caterpillar. Do three slow passes up the arch on each foot. Pause a few seconds on anything tender.",
+      "commonMistake": "Sliding instead of walking. Small bites, edge over edge.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s05",
+      "regionID": "foot",
+      "techniqueID": "myofascial",
+      "title": "Open the sole",
+      "body": "Put both thumbs in the middle of the sole and draw them slowly apart, opening the foot outward. Work from the heel to the ball.",
+      "sensationCue": "The sole broadening. A slow, spreading stretch.",
+      "handPosition": "doubleThumb",
+      "pressure": 3,
+      "durationSeconds": 75,
+      "rhythm": "One slow spread every five seconds",
+      "breathCue": "They breathe out as you spread",
+      "heroImage": "img.reg.foot.alt2",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.38,
+            0.91
+          ],
+          [
+            0.42,
+            0.91
+          ],
+          [
+            0.38,
+            0.89
+          ],
+          [
+            0.42,
+            0.89
+          ]
+        ],
+        "motion": "stretch",
+        "loop": true
+      },
+      "voiceScript": "Place both thumbs together in the middle of the sole, with your fingers wrapped around the top of the foot. Draw the thumbs slowly apart so the sole opens outward. Work your way from the heel up to the ball of the foot, then swap.",
+      "commonMistake": "Spreading too fast. Slow is what lets the tissue give.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s06",
+      "regionID": "foot",
+      "techniqueID": "friction",
+      "title": "Circle into the heel",
+      "body": "Make firm, slow circles into the fleshy pad of the heel with your knuckles. Ask them to tell you when it is enough.",
+      "sensationCue": "Deep, dull and satisfying. Never sharp or burning.",
+      "handPosition": "knuckles",
+      "pressure": 4,
+      "durationSeconds": 75,
+      "rhythm": "One slow circle a second",
+      "breathCue": "They breathe out as you press",
+      "heroImage": "img.reg.foot",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.94
+          ],
+          [
+            0.41,
+            0.94
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Support the top of the foot with one hand and make firm, slow circles into the fleshy heel pad with the knuckles of the other. This is the toughest skin on the body, so it can take real pressure. Even so, ask them how it feels.",
+      "commonMistake": "Going as hard as you can. Ask first, always.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s07",
+      "regionID": "foot",
+      "techniqueID": "friction",
+      "title": "Slide between the foot bones",
+      "body": "Turn to the top of the foot. Slide your thumb along each groove between the long bones, from the toes back toward the ankle.",
+      "sensationCue": "Narrow lines of tenderness easing. Never bruising.",
+      "handPosition": "thumbPad",
+      "pressure": 2,
+      "durationSeconds": 60,
+      "rhythm": "One slow slide every four seconds",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.foot.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.9
+          ],
+          [
+            0.4,
+            0.88
+          ],
+          [
+            0.4,
+            0.86
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Turn your attention to the top of the foot, where you can feel the long bones running to the toes. Slide your thumb along each groove between them, from the toes back toward the ankle. Keep it lighter here — there is not much padding.",
+      "commonMistake": "Pressing hard on thin skin. Lighter works better here.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s08",
+      "regionID": "foot",
+      "techniqueID": "stretch",
+      "title": "Pull and circle each toe",
+      "body": "Hold each toe, pull gently for two seconds, then circle it once each way. Work along all five, then do the other foot.",
+      "sensationCue": "A tiny release in each joint. A pull, never a crack.",
+      "handPosition": "pincerGrip",
+      "pressure": 2,
+      "durationSeconds": 75,
+      "rhythm": "Two seconds a toe, then move on",
+      "breathCue": "Let them breathe normally",
+      "heroImage": "img.reg.foot.alt2",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.37,
+            0.86
+          ],
+          [
+            0.4,
+            0.85
+          ],
+          [
+            0.43,
+            0.86
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Take each toe between your thumb and finger, pull gently and steadily for about two seconds, then circle it once each way. Move along all five toes, then finish by squeezing gently between each one. Do the same on the other foot.",
+      "commonMistake": "Yanking for a click. A slow, gentle pull is the point.",
+      "caution": "Never pull hard or twist a toe to make it click.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "foot.partner.ritual.s09",
+      "regionID": "calfShin",
+      "techniqueID": "petrissage",
+      "title": "Squeeze the calves",
+      "body": "Slide a hand under one calf and squeeze slowly, working from the ankle upward. Keep well clear of the back of the knee.",
+      "sensationCue": "A slow, firm squeeze on a tired muscle. Never sharp.",
+      "handPosition": "cGrip",
+      "pressure": 3,
+      "durationSeconds": 90,
+      "rhythm": "Squeeze three seconds, then move up",
+      "breathCue": "They breathe out as you squeeze",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.84
+          ],
+          [
+            0.41,
+            0.8
+          ],
+          [
+            0.41,
+            0.76
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Slide one hand under the calf and lift it slightly, then squeeze slowly with your whole hand and work your way up from the ankle. Stop well below the back of the knee. Do the same on the other leg.",
+      "commonMistake": "Squeezing with fingertips. Use the whole hand.",
+      "caution": "Never press behind the knee. Skip the calves entirely if they have clots or painful varicose veins.",
+      "modes": [
+        "partner"
+      ],
+      "contraindications": [
+        "dvtOrBloodThinners"
+      ]
+    },
+    {
+      "id": "foot.partner.ritual.s10",
+      "regionID": "foot",
+      "techniqueID": "effleurage",
+      "title": "Long strokes and cover",
+      "body": "Finish each foot with long light strokes from the toes to the ankle, getting lighter each time. Then wrap both feet in the dry towel.",
+      "sensationCue": "Light, warm and finished. Nothing left undone.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 60,
+      "rhythm": "Slower and lighter each pass",
+      "breathCue": "Let their breathing lead",
+      "heroImage": "img.prep.towel",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.94
+          ],
+          [
+            0.4,
+            0.9
+          ],
+          [
+            0.4,
+            0.86
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Finish each foot with long, light strokes from the toes up to the ankle, getting lighter every time. Then wrap both feet together in the dry towel and rest your hands on them for a few breaths. Dry them properly before they stand up.",
+      "commonMistake": "Leaving oily feet loose on a hard floor. Dry them first.",
+      "caution": null,
+      "modes": [
+        "partner"
+      ],
+      "contraindications": []
+    }
+  ]
+}

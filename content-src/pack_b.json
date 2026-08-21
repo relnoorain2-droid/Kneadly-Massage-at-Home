@@ -1,0 +1,2476 @@
+{
+  "routines": [
+    {
+      "id": "head.solo.headache",
+      "title": "Sinus & Headache Relief",
+      "subtitle": "Ease a tight head and blocked sinuses.",
+      "regionIDs": [
+        "face",
+        "scalp",
+        "suboccipitals"
+      ],
+      "mode": "solo",
+      "level": "beginner",
+      "durationSeconds": 420,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "seatedUpright",
+      "needs": [
+        "A chair",
+        "Clean hands",
+        "Short nails"
+      ],
+      "skipIf": [
+        "pregnancy",
+        "feverOrInfection",
+        "recentNeckInjury"
+      ],
+      "coverImage": "img.reg.head",
+      "coverPlaceholderHex": "#C9A188",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Sip some water and let your eyes rest for a minute. A warm, damp cloth over the face feels very good after this.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "head.solo.headache.s01",
+            "head.solo.headache.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "head.solo.headache.s03",
+            "head.solo.headache.s04",
+            "head.solo.headache.s05",
+            "head.solo.headache.s06",
+            "head.solo.headache.s07",
+            "head.solo.headache.s08"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "head.solo.headache.s09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forearm.solo.rescue",
+      "title": "Forearm Rescue",
+      "subtitle": "Undo the ache of typing, scrolling and clicking.",
+      "regionIDs": [
+        "forearm",
+        "hand"
+      ],
+      "mode": "solo",
+      "level": "beginner",
+      "durationSeconds": 360,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "seatedUpright",
+      "needs": [
+        "A chair",
+        "A desk or table",
+        "Lotion optional"
+      ],
+      "skipIf": [
+        "carpalTunnel"
+      ],
+      "coverImage": "img.reg.hand",
+      "coverPlaceholderHex": "#C9A188",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Shake your hands out and drink some water. Give your wrists a few minutes away from the keyboard before you start typing again.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "forearm.solo.rescue.s01",
+            "forearm.solo.rescue.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "forearm.solo.rescue.s03",
+            "forearm.solo.rescue.s04",
+            "forearm.solo.rescue.s05",
+            "forearm.solo.rescue.s06"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "forearm.solo.rescue.s07",
+            "forearm.solo.rescue.s08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lowerback.solo.ball",
+      "title": "Lower Back Ball Release",
+      "subtitle": "A tennis ball, a wall, and an easier back.",
+      "regionIDs": [
+        "lowerBack",
+        "glutesHips"
+      ],
+      "mode": "solo",
+      "level": "intermediate",
+      "durationSeconds": 540,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "standing",
+      "needs": [
+        "A tennis ball",
+        "A clear stretch of wall",
+        "A mat or carpet"
+      ],
+      "skipIf": [
+        "osteoporosis",
+        "recentSurgeryOrFracture"
+      ],
+      "coverImage": "img.reg.back",
+      "coverPlaceholderHex": "#B98F76",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Stand up slowly and walk around for a minute. A little tenderness tomorrow is normal, like after the gym, and a warm shower helps.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "lowerback.solo.ball.s01",
+            "lowerback.solo.ball.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "lowerback.solo.ball.s03",
+            "lowerback.solo.ball.s04",
+            "lowerback.solo.ball.s05",
+            "lowerback.solo.ball.s06",
+            "lowerback.solo.ball.s07"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "lowerback.solo.ball.s08",
+            "lowerback.solo.ball.s09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glute.solo.ball",
+      "title": "Glute & Piriformis Ball",
+      "subtitle": "Sit on a ball and let a tight hip let go.",
+      "regionIDs": [
+        "glutesHips",
+        "lowerBack"
+      ],
+      "mode": "solo",
+      "level": "intermediate",
+      "durationSeconds": 480,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "seatedUpright",
+      "needs": [
+        "A tennis or lacrosse ball",
+        "A firm chair",
+        "A mat if you prefer the floor"
+      ],
+      "skipIf": [
+        "pregnancy",
+        "recentSurgeryOrFracture"
+      ],
+      "coverImage": "img.reg.back.alt",
+      "coverPlaceholderHex": "#A8836B",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Stand and walk for a minute before you sit down again. A day of tenderness is normal; sharp or shooting pain down the leg is not, so see a doctor if that turns up.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "glute.solo.ball.s01",
+            "glute.solo.ball.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "glute.solo.ball.s03",
+            "glute.solo.ball.s04",
+            "glute.solo.ball.s05",
+            "glute.solo.ball.s06",
+            "glute.solo.ball.s07"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "glute.solo.ball.s08",
+            "glute.solo.ball.s09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calf.solo.release",
+      "title": "Calf & Shin Release",
+      "subtitle": "Loosen tired calves and aching shins.",
+      "regionIDs": [
+        "calfShin",
+        "foot"
+      ],
+      "mode": "solo",
+      "level": "beginner",
+      "durationSeconds": 480,
+      "minPressure": 1,
+      "maxPressure": 4,
+      "position": "seatedUpright",
+      "needs": [
+        "A chair",
+        "A rolled towel or foam roller",
+        "A wall",
+        "Lotion optional"
+      ],
+      "skipIf": [
+        "dvtOrBloodThinners",
+        "recentSurgeryOrFracture"
+      ],
+      "coverImage": "img.reg.leg",
+      "coverPlaceholderHex": "#C2A58E",
+      "isPremium": true,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Drink some water and walk about for a minute. If one calf stays swollen, hot or sore afterwards, leave it alone and speak to a doctor.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "calf.solo.release.s01",
+            "calf.solo.release.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "calf.solo.release.s03",
+            "calf.solo.release.s04",
+            "calf.solo.release.s05",
+            "calf.solo.release.s06",
+            "calf.solo.release.s07"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "calf.solo.release.s08",
+            "calf.solo.release.s09"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desk.solo.reset",
+      "title": "Desk Reset",
+      "subtitle": "Five quiet minutes at your desk, fully clothed.",
+      "regionIDs": [
+        "neck",
+        "shouldersUpperTrap",
+        "forearm",
+        "hand"
+      ],
+      "mode": "solo",
+      "level": "beginner",
+      "durationSeconds": 300,
+      "minPressure": 1,
+      "maxPressure": 3,
+      "position": "seatedUpright",
+      "needs": [
+        "Your desk chair",
+        "No oil, no kit"
+      ],
+      "skipIf": [
+        "recentNeckInjury"
+      ],
+      "coverImage": "img.reg.shoulder",
+      "coverPlaceholderHex": "#C9A188",
+      "isPremium": false,
+      "reviewedBy": "Reviewed by a licensed massage therapist",
+      "aftercare": "Look out of a window for twenty seconds before you go back to the screen. Grab a glass of water while you are up.",
+      "sections": [
+        {
+          "kind": "warmUp",
+          "stepIDs": [
+            "desk.solo.reset.s01",
+            "desk.solo.reset.s02"
+          ]
+        },
+        {
+          "kind": "main",
+          "stepIDs": [
+            "desk.solo.reset.s03",
+            "desk.solo.reset.s04",
+            "desk.solo.reset.s05",
+            "desk.solo.reset.s06",
+            "desk.solo.reset.s07"
+          ]
+        },
+        {
+          "kind": "coolDown",
+          "stepIDs": [
+            "desk.solo.reset.s08"
+          ]
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "head.solo.headache.s01",
+      "regionID": "face",
+      "techniqueID": "staticHold",
+      "title": "Cup your hands over your eyes",
+      "body": "Rub your palms together until they feel warm. Cup them over your closed eyes without touching them, and breathe.",
+      "sensationCue": "Warm and dark. No pressure at all on the eyes.",
+      "handPosition": "cuppedHand",
+      "pressure": 1,
+      "durationSeconds": 30,
+      "rhythm": "Still — no movement",
+      "breathCue": "Three slow breaths out",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.47,
+            0.09
+          ],
+          [
+            0.53,
+            0.09
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Rub your palms together for a few seconds until they feel warm. Now cup them over your closed eyes, resting the edges of your hands on your cheekbones so nothing presses on the eyes themselves. Take three slow breaths in the dark.",
+      "commonMistake": "Do not press on your eyes. The heels of your hands rest on bone.",
+      "caution": "Never put pressure on the eyeball itself.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "head.solo.headache.s02",
+      "regionID": "face",
+      "techniqueID": "effleurage",
+      "title": "Warm your forehead with flat fingers",
+      "body": "Lay three fingers of each hand in the middle of your forehead. Sweep them out to your temples, slow and light.",
+      "sensationCue": "Smooth and warm. The skin should glide, never drag.",
+      "handPosition": "fingertips",
+      "pressure": 2,
+      "durationSeconds": 40,
+      "rhythm": "One sweep every three seconds",
+      "breathCue": "Breathe out on every sweep",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.08
+          ],
+          [
+            0.44,
+            0.09
+          ],
+          [
+            0.41,
+            0.1
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Lay three fingers of each hand flat in the middle of your forehead. Sweep them outward to your temples, slowly and lightly, then lift off and start again. Let your face soften as you go.",
+      "commonMistake": "Do not drag on dry skin. Keep it light enough to glide.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "head.solo.headache.s03",
+      "regionID": "face",
+      "techniqueID": "friction",
+      "title": "Circle your temples",
+      "body": "Put two fingertips on each temple, in the soft dip beside your eyebrow. Circle slowly, moving the skin instead of sliding over it.",
+      "sensationCue": "A dull, satisfying ache that eases as you circle. Never sharp.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 50,
+      "rhythm": "One slow circle per second",
+      "breathCue": "Long breath out through your nose",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.1
+          ],
+          [
+            0.41,
+            0.11
+          ],
+          [
+            0.6,
+            0.1
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Find the soft dip on each temple, just beside the outer end of your eyebrow. Rest two fingertips there and make slow circles, moving the skin with you instead of sliding across it. Clench your teeth once and you will feel the muscle move under your fingers.",
+      "commonMistake": "Do not press hard here. The bone is thin and the muscle is small.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "head.solo.headache.s04",
+      "regionID": "face",
+      "techniqueID": "triggerPoint",
+      "title": "Press along your brow line",
+      "body": "Pinch the ridge of your eyebrow between thumb and finger at the inner corner. Hold three seconds, move out a little, and repeat.",
+      "sensationCue": "A bright, sore pinch that fades fast. Never a stab.",
+      "handPosition": "pincerGrip",
+      "pressure": 3,
+      "durationSeconds": 50,
+      "rhythm": "Three seconds on, then move out",
+      "breathCue": "Breathe out as you squeeze",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.09
+          ],
+          [
+            0.43,
+            0.09
+          ],
+          [
+            0.41,
+            0.095
+          ]
+        ],
+        "motion": "press",
+        "loop": true
+      },
+      "voiceScript": "Take the ridge of your eyebrow between your thumb and first finger, starting at the inner corner near your nose. Squeeze gently for three seconds, let go, and move out a finger width. Work all the way to the outer end, then do the other side.",
+      "commonMistake": "Do not slide down onto the eyelid. Stay on the bony ridge.",
+      "caution": "Stay on the brow bone. Never press on the eye itself.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "head.solo.headache.s05",
+      "regionID": "face",
+      "techniqueID": "shiatsu",
+      "title": "Press the points beside your nose",
+      "body": "Put a fingertip either side of your nose, level with the nostrils, in the small dip against the cheekbone. Press in and up.",
+      "sensationCue": "A full, achy pressure that can make your nose run. Never sharp.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 50,
+      "rhythm": "Ten seconds on, five seconds off",
+      "breathCue": "Breathe out slowly through your mouth",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.48,
+            0.1
+          ],
+          [
+            0.52,
+            0.1
+          ]
+        ],
+        "motion": "press",
+        "loop": true
+      },
+      "voiceScript": "Find the small dip either side of your nose, level with your nostrils, where the cheekbone begins. Press in and slightly upward with a fingertip on each side and hold for ten seconds. Ease off, breathe, then do it again.",
+      "commonMistake": "Do not press into the nostril. Aim for the bone at the edge.",
+      "caution": "Skip this if the skin over your sinuses is hot, swollen or very tender.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "feverOrInfection"
+      ]
+    },
+    {
+      "id": "head.solo.headache.s06",
+      "regionID": "face",
+      "techniqueID": "lymphatic",
+      "title": "Sweep under your cheekbones",
+      "body": "Rest your fingertips beside your nose again. Sweep out under the cheekbone towards your ear, then down the side of your neck.",
+      "sensationCue": "Light and drifting, barely more than skin deep. Never firm.",
+      "handPosition": "fingertips",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "One slow sweep every four seconds",
+      "breathCue": "Steady, easy breathing",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#D8B79E",
+      "bodyMapZones": [
+        "head",
+        "neck"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.48,
+            0.11
+          ],
+          [
+            0.44,
+            0.11
+          ],
+          [
+            0.42,
+            0.14
+          ],
+          [
+            0.42,
+            0.17
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Start with your fingertips beside your nose and sweep outward under the cheekbone, all the way to the front of your ear. Then carry on down the side of your neck towards the collarbone. Keep it feather light, because this one works on the surface.",
+      "commonMistake": "Heavy pressure does nothing here. Lighter is better.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "head.solo.headache.s07",
+      "regionID": "suboccipitals",
+      "techniqueID": "friction",
+      "title": "Work the base of your skull",
+      "body": "Curl your fingertips under the bony ridge at the back of your head. Make small circles either side of the middle, letting your head get heavy.",
+      "sensationCue": "A melting release that spreads up over your scalp. Never sharp.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "Four circles, then move a thumb-width",
+      "breathCue": "Let your head rest into your fingers",
+      "heroImage": "img.reg.head",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "head",
+        "neck"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.13
+          ],
+          [
+            0.5,
+            0.13
+          ],
+          [
+            0.54,
+            0.13
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Curl your fingertips up under the bony ridge at the back of your head, where the skull meets the neck. Let the weight of your head rest into them and make small, slow circles. Work outward towards your ears a thumb width at a time.",
+      "commonMistake": "Do not dig with your nails. Use the soft pads of your fingers.",
+      "caution": "Stay either side of the bony bumps of the spine, never on them.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "recentNeckInjury"
+      ]
+    },
+    {
+      "id": "head.solo.headache.s08",
+      "regionID": "hand",
+      "techniqueID": "shiatsu",
+      "title": "Squeeze the web of your hand",
+      "body": "Pinch the fleshy web between your thumb and index finger. Squeeze towards the bone of the index finger and hold, then swap hands.",
+      "sensationCue": "A strong, spreading ache. Often sorer on one hand than the other.",
+      "handPosition": "pincerGrip",
+      "pressure": 4,
+      "durationSeconds": 60,
+      "rhythm": "Thirty seconds on each hand",
+      "breathCue": "Breathe out into the squeeze",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "hands"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.23,
+            0.5
+          ],
+          [
+            0.24,
+            0.5
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Take the fleshy web between your thumb and index finger and squeeze it, angling the pressure towards the bone of the index finger. Hold for thirty slow seconds, breathing out into it, then swap hands.",
+      "commonMistake": "Do not rub it. Steady pressure works better than movement.",
+      "caution": "Skip this point completely if you are pregnant.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "pregnancy"
+      ]
+    },
+    {
+      "id": "head.solo.headache.s09",
+      "regionID": "face",
+      "techniqueID": "staticHold",
+      "title": "Palm your eyes and rest",
+      "body": "Warm your palms again and cup them over your closed eyes. Sit still and let your face and jaw go loose.",
+      "sensationCue": "Quiet, warm and dark. Your jaw should unclench.",
+      "handPosition": "cuppedHand",
+      "pressure": 1,
+      "durationSeconds": 35,
+      "rhythm": "Still — no movement",
+      "breathCue": "Four slow breaths out",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.47,
+            0.09
+          ],
+          [
+            0.53,
+            0.09
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Rub your palms warm one more time and cup them over your closed eyes. Let your jaw hang loose and your shoulders drop. Stay here for four slow breaths, then take your hands away gently and open your eyes.",
+      "commonMistake": null,
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s01",
+      "regionID": "hand",
+      "techniqueID": "stretch",
+      "title": "Open and close your hands",
+      "body": "Spread your fingers as wide as they go, then curl them into a loose fist. Repeat slowly, then circle each wrist a few times.",
+      "sensationCue": "Stiff at first, easier by the tenth one. Never painful.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 30,
+      "rhythm": "One open and close every two seconds",
+      "breathCue": "Easy, steady breathing",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "hands",
+        "forearms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.23,
+            0.5
+          ],
+          [
+            0.25,
+            0.48
+          ]
+        ],
+        "motion": "stretch",
+        "loop": true
+      },
+      "voiceScript": "Spread your fingers as wide as they will go, hold for a second, then curl them into a loose fist. Repeat that ten times, and finish with a few slow circles of each wrist. This wakes everything up before you press on it.",
+      "commonMistake": "Do not squeeze the fist hard. Loose is the point.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s02",
+      "regionID": "forearm",
+      "techniqueID": "effleurage",
+      "title": "Warm the whole forearm",
+      "body": "Rest one arm on the desk, palm up. Stroke firmly from wrist to elbow with your other palm, then turn the arm over and repeat.",
+      "sensationCue": "Warm and smooth, like ironing. Nothing sharp.",
+      "handPosition": "flatPalm",
+      "pressure": 2,
+      "durationSeconds": 40,
+      "rhythm": "One long stroke every three seconds",
+      "breathCue": "Slow breath out on each stroke",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "forearms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.25,
+            0.46
+          ],
+          [
+            0.25,
+            0.41
+          ],
+          [
+            0.27,
+            0.36
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Rest one forearm on the desk with the palm facing up. Using the flat of your other hand, stroke firmly from the wrist up towards the elbow, then lift off and start again. After twenty seconds, turn the arm over and warm the top the same way.",
+      "commonMistake": "Do not stroke back down. Work towards the elbow each time.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s03",
+      "regionID": "forearm",
+      "techniqueID": "petrissage",
+      "title": "Knead the soft inner forearm",
+      "body": "Turn your arm palm up. Squeeze the meaty muscle below the elbow between thumb and fingers, working slowly down towards the wrist.",
+      "sensationCue": "A deep, dull ache that softens as you work. Never sharp or tingly.",
+      "handPosition": "cGrip",
+      "pressure": 3,
+      "durationSeconds": 55,
+      "rhythm": "One squeeze per second, moving down",
+      "breathCue": "Breathe out as you squeeze",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "forearms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.27,
+            0.36
+          ],
+          [
+            0.26,
+            0.4
+          ],
+          [
+            0.25,
+            0.44
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "With your arm palm up on the desk, take the meaty muscle just below the elbow between your thumb and fingers. Squeeze, let go, and creep a little further down the arm. Stop about two finger widths above the wrist crease.",
+      "commonMistake": "Do not carry on into the wrist. That is where the nerve runs.",
+      "caution": "Stay off the middle of the wrist crease. Never press hard there.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "carpalTunnel"
+      ]
+    },
+    {
+      "id": "forearm.solo.rescue.s04",
+      "regionID": "forearm",
+      "techniqueID": "deepTissue",
+      "title": "Thumb walk down the top",
+      "body": "Turn your arm palm down. Press your thumb into the muscle on top of the forearm and walk slowly from below the elbow to the wrist.",
+      "sensationCue": "Firm and achy, often more tender than you expect. Never sharp.",
+      "handPosition": "thumbPad",
+      "pressure": 3,
+      "durationSeconds": 55,
+      "rhythm": "Press two seconds, move a thumb-width",
+      "breathCue": "Steady breathing, no holding",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "forearms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.29,
+            0.36
+          ],
+          [
+            0.27,
+            0.4
+          ],
+          [
+            0.26,
+            0.44
+          ]
+        ],
+        "motion": "walk",
+        "loop": true
+      },
+      "voiceScript": "Turn your arm palm down on the desk. Sink your thumb into the muscle on top of the forearm, hold for two seconds, then move a thumb width towards the wrist. This band does most of the work when you use a mouse, so take your time.",
+      "commonMistake": "Do not use your thumb tip. Press with the flat pad.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s05",
+      "regionID": "forearm",
+      "techniqueID": "triggerPoint",
+      "title": "Hold the sore outer elbow spot",
+      "body": "With the arm palm down, feel two finger widths below the outside of the elbow. Press into the tender knot there and hold still.",
+      "sensationCue": "A strong ache that may spread down the arm. Never electric.",
+      "handPosition": "thumbPad",
+      "pressure": 4,
+      "durationSeconds": 50,
+      "rhythm": "Hold twenty seconds, then ease off",
+      "breathCue": "Breathe out into the pressure",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "forearms",
+        "arms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.29,
+            0.35
+          ],
+          [
+            0.295,
+            0.355
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Keep the arm palm down and feel about two finger widths below the outside of the elbow. There is usually a tender knot there in anyone who uses a keyboard. Press into it with your thumb and hold, still and steady, for twenty seconds.",
+      "commonMistake": "Do not rub the spot. Still pressure is what lets it let go.",
+      "caution": "If the ache turns to burning, or you feel tingling in your fingers, come off it.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s06",
+      "regionID": "forearm",
+      "techniqueID": "friction",
+      "title": "Circle below the inner elbow",
+      "body": "Turn palm up and find the muscle just below the inner elbow. Make small circles there, staying off the bony knob of the funny bone.",
+      "sensationCue": "Achy and firm. Any zing into the little finger means move.",
+      "handPosition": "fingertips",
+      "pressure": 3,
+      "durationSeconds": 50,
+      "rhythm": "Slow circles, moving a little each time",
+      "breathCue": "Long, slow breath out",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "forearms",
+        "arms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.27,
+            0.35
+          ],
+          [
+            0.26,
+            0.37
+          ],
+          [
+            0.27,
+            0.39
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Turn the arm palm up and find the soft muscle just below the crease of your inner elbow. Make small, slow circles into it with your fingertips. Keep well away from the bony knob on the inside, the funny bone, because a nerve sits right on it.",
+      "commonMistake": "Do not press the bony knob. The nerve there does not like it.",
+      "caution": "Never press directly on the funny bone. Tingling means move off.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s07",
+      "regionID": "forearm",
+      "techniqueID": "stretch",
+      "title": "Stretch the front of your wrist",
+      "body": "Straighten one arm, palm forward like a stop sign. Use your other hand to draw the fingers gently back, and hold.",
+      "sensationCue": "A long pull down the inside of the forearm. Never a pinch at the wrist.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "Twenty seconds on each side",
+      "breathCue": "Breathe out as the stretch eases",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#D8B79E",
+      "bodyMapZones": [
+        "forearms",
+        "hands"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.25,
+            0.44
+          ],
+          [
+            0.24,
+            0.48
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Straighten one arm in front of you, palm facing away like a stop sign. With your other hand, draw the fingers gently back towards you until you feel a long pull down the inside of the forearm. Hold for twenty slow seconds, then swap arms.",
+      "commonMistake": "Do not lock the elbow hard. Keep a soft bend.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "forearm.solo.rescue.s08",
+      "regionID": "forearm",
+      "techniqueID": "stretch",
+      "title": "Stretch the back and shake out",
+      "body": "Point your fingers down with the palm facing you and press the back of the hand gently. Then drop your arms and shake both hands loose.",
+      "sensationCue": "A pull along the top of the forearm, then loose, warm hands.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 35,
+      "rhythm": "Fifteen seconds each side, then shake",
+      "breathCue": "Sigh out on the shake",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "forearms",
+        "hands"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.27,
+            0.42
+          ],
+          [
+            0.25,
+            0.47
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Now turn the hand the other way, fingers pointing down and the palm facing you, and press gently on the back of the hand until the top of the forearm pulls. Fifteen seconds each side. Then let your arms hang and shake both hands out, like you are flicking off water.",
+      "commonMistake": null,
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s01",
+      "regionID": "lowerBack",
+      "techniqueID": "stretch",
+      "title": "Rock your hips against the wall",
+      "body": "Stand with your back to the wall, knees soft. Tuck your tailbone under so your lower back flattens, then let it curve back.",
+      "sensationCue": "A gentle rocking through the lower back. Never a pinch.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "One slow rock every four seconds",
+      "breathCue": "Breathe out as you flatten",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.37
+          ],
+          [
+            0.5,
+            0.42
+          ]
+        ],
+        "motion": "stretch",
+        "loop": true
+      },
+      "voiceScript": "Stand with your back against the wall and your knees slightly bent. Tuck your tailbone under so the small of your back flattens into the wall, then let it curve away again. Keep it slow and small, this is only to wake the area up.",
+      "commonMistake": "Do not force the movement. Small and slow is enough.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s02",
+      "regionID": "lowerBack",
+      "techniqueID": "effleurage",
+      "title": "Warm your lower back with knuckles",
+      "body": "Make loose fists and rest the flat of your knuckles either side of your spine. Rub briskly up and down until the skin feels warm.",
+      "sensationCue": "Warm and buzzy, like standing near a fire. Never sore.",
+      "handPosition": "knuckles",
+      "pressure": 2,
+      "durationSeconds": 45,
+      "rhythm": "Brisk — about two rubs per second",
+      "breathCue": "Easy, steady breathing",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.36
+          ],
+          [
+            0.45,
+            0.4
+          ],
+          [
+            0.55,
+            0.4
+          ],
+          [
+            0.55,
+            0.36
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Make loose fists and put the flat of your knuckles on the muscle either side of your spine, just above your belt line. Rub briskly up and down for about half a minute, until the skin under your hands feels properly warm.",
+      "commonMistake": "Do not rub on the bumps of the spine. Stay on the muscle either side.",
+      "caution": "Keep your knuckles off the spine itself.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s03",
+      "regionID": "lowerBack",
+      "techniqueID": "selfMyofascial",
+      "title": "Roll the ball against the wall",
+      "body": "Trap a tennis ball between the wall and the muscle beside your spine. Bend and straighten your knees to roll it slowly up and down.",
+      "sensationCue": "Firm pressure you control by leaning. A good ache, never sharp.",
+      "handPosition": "tool",
+      "pressure": 3,
+      "durationSeconds": 70,
+      "rhythm": "One slow pass every ten seconds",
+      "breathCue": "Breathe out as you lean in",
+      "heroImage": "img.reg.back",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.33
+          ],
+          [
+            0.45,
+            0.37
+          ],
+          [
+            0.45,
+            0.41
+          ]
+        ],
+        "motion": "walk",
+        "loop": true
+      },
+      "voiceScript": "Put the tennis ball between the wall and the muscle running alongside your spine, about a hand's width above your belt. Bend your knees to slide down, then straighten to come back up, rolling the ball slowly over the muscle. Do about thirty seconds on each side.",
+      "commonMistake": "Do not roll fast. Slow finds more than hard does.",
+      "caution": "Never let the ball sit on your spine. Stay on the muscle beside it.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "osteoporosis"
+      ]
+    },
+    {
+      "id": "lowerback.solo.ball.s04",
+      "regionID": "lowerBack",
+      "techniqueID": "triggerPoint",
+      "title": "Lean into the sorest spot",
+      "body": "When the ball finds a spot that complains, stop there. Lean your weight in and hold still while you take five slow breaths.",
+      "sensationCue": "A strong ache that fades by about half while you hold.",
+      "handPosition": "tool",
+      "pressure": 4,
+      "durationSeconds": 70,
+      "rhythm": "Hold thirty seconds on each spot",
+      "breathCue": "Breathe out long into the ball",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.45,
+            0.38
+          ],
+          [
+            0.455,
+            0.385
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "When the ball rolls over somewhere that really complains, stop and stay there. Lean your weight into the wall and hold, taking five slow breaths, and let the muscle give way under it. Step your feet away from the wall a little if you want less pressure.",
+      "commonMistake": "Do not hold your breath. Breathing out is what softens it.",
+      "caution": "If the pressure sends a sharp line down your leg, move off that spot.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s05",
+      "regionID": "lowerBack",
+      "techniqueID": "selfMyofascial",
+      "title": "Work the top of your hip",
+      "body": "Drop the ball to just above the rim of your hip bone, off to the side. Roll small and slow along that shelf of muscle.",
+      "sensationCue": "Tender and thick, like a rope under the ball. Never bony pain.",
+      "handPosition": "tool",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "Small rolls, pausing where it bites",
+      "breathCue": "Long breath out on each pause",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.43
+          ],
+          [
+            0.44,
+            0.46
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Slide the ball down and out until it sits just above the rim of your hip bone, off to the side of your back. Roll it in small, slow circles along that shelf of muscle. It is often the most tender part of the whole routine, so lean in gently.",
+      "commonMistake": "Do not roll onto the hip bone. Stay on the muscle above it.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s06",
+      "regionID": "lowerBack",
+      "techniqueID": "selfMyofascial",
+      "title": "Take the ball to the floor",
+      "body": "Lie on your back with knees bent and feet flat. Slide the ball under one side of your lower back and let your weight sink onto it.",
+      "sensationCue": "Deeper than the wall, because your own weight does the work.",
+      "handPosition": "tool",
+      "pressure": 4,
+      "durationSeconds": 70,
+      "rhythm": "Sink for twenty seconds, shift, repeat",
+      "breathCue": "Breathe out and let your weight drop",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.34
+          ],
+          [
+            0.46,
+            0.38
+          ]
+        ],
+        "motion": "hold",
+        "loop": true
+      },
+      "voiceScript": "Lie down on a mat with your knees bent and your feet flat. Slide the ball under one side of your lower back, beside the spine, and let your weight settle onto it for about twenty seconds. Lift your hips a little to move it, then settle again.",
+      "commonMistake": "Do not flop down onto it. Lower yourself slowly with your hands.",
+      "caution": "Keep the ball beside the spine, never under the bones of the spine.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "osteoporosis"
+      ]
+    },
+    {
+      "id": "lowerback.solo.ball.s07",
+      "regionID": "glutesHips",
+      "techniqueID": "selfMyofascial",
+      "title": "Roll the top of your buttock",
+      "body": "Move the ball down onto the muscle at the top of your buttock. Let that knee fall out to the side to sink in deeper.",
+      "sensationCue": "A broad, deep ache. Never a sharp line down the leg.",
+      "handPosition": "tool",
+      "pressure": 4,
+      "durationSeconds": 70,
+      "rhythm": "Twenty seconds per spot, three spots",
+      "breathCue": "Breathe out and let the hip soften",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.45
+          ],
+          [
+            0.44,
+            0.48
+          ]
+        ],
+        "motion": "hold",
+        "loop": true
+      },
+      "voiceScript": "Move the ball down onto the thick muscle at the top of your buttock, out from the tailbone. Let that knee fall open to the side to sink deeper, and hold for twenty seconds before shifting to a new spot.",
+      "commonMistake": "Do not sit on the tailbone itself. Stay out on the muscle.",
+      "caution": "Stay off the bony tailbone and the flat plate of bone beside it.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s08",
+      "regionID": "lowerBack",
+      "techniqueID": "stretch",
+      "title": "Hug your knees and rock",
+      "body": "Take the ball out. Draw both knees up to your chest, hold your shins, and rock gently from side to side.",
+      "sensationCue": "A long, easy stretch across the lower back. Never a pinch.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 55,
+      "rhythm": "One slow rock every three seconds",
+      "breathCue": "Breathe out as you rock",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#D8B79E",
+      "bodyMapZones": [
+        "abdomen",
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.46,
+            0.4
+          ],
+          [
+            0.54,
+            0.4
+          ]
+        ],
+        "motion": "stretch",
+        "loop": true
+      },
+      "voiceScript": "Take the ball out and draw both knees up towards your chest. Hold your shins and rock gently from side to side, letting the floor rub your lower back for you. Keep your head and shoulders relaxed on the mat.",
+      "commonMistake": "Do not pull hard on your knees. Let your arms be lazy.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "lowerback.solo.ball.s09",
+      "regionID": "lowerBack",
+      "techniqueID": "staticHold",
+      "title": "Lie flat and breathe",
+      "body": "Put your feet flat and your hands on your belly. Breathe so your belly rises, and feel your back settle into the floor.",
+      "sensationCue": "Wide, heavy and still. The floor should feel like it holds you.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 55,
+      "rhythm": "Still — no movement",
+      "breathCue": "In for four, out for six",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "abdomen"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.49,
+            0.37
+          ],
+          [
+            0.51,
+            0.37
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Let your feet come flat to the floor and rest both hands on your belly. Breathe in so your belly lifts your hands, then let the air out slowly. Stay for about a minute and feel your back spread out on the mat.",
+      "commonMistake": null,
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s01",
+      "regionID": "glutesHips",
+      "techniqueID": "stretch",
+      "title": "Sit tall and rock your hips",
+      "body": "Sit on a firm chair with both feet flat. Rock slowly forward and back on your sitting bones, then stop in the middle.",
+      "sensationCue": "Easy movement through the hips. Nothing should pinch.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 40,
+      "rhythm": "One slow rock every four seconds",
+      "breathCue": "Breathe out as you settle",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.46
+          ],
+          [
+            0.5,
+            0.49
+          ]
+        ],
+        "motion": "stretch",
+        "loop": true
+      },
+      "voiceScript": "Sit on a firm chair with both feet flat on the floor. Rock slowly forwards and backwards on your sitting bones, then stop in the middle, where you feel tall and balanced. Take a couple of easy breaths there.",
+      "commonMistake": "Do not perch on the front edge. Sit with your whole weight down.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s02",
+      "regionID": "glutesHips",
+      "techniqueID": "effleurage",
+      "title": "Warm the muscle with your fist",
+      "body": "Lean onto one hip and rub the meat of the other buttock with a loose fist. Big, firm circles until it feels warm.",
+      "sensationCue": "Warm and broad. Nothing pointy or sharp.",
+      "handPosition": "knuckles",
+      "pressure": 2,
+      "durationSeconds": 45,
+      "rhythm": "About one circle per second",
+      "breathCue": "Steady, easy breathing",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.47
+          ],
+          [
+            0.46,
+            0.5
+          ],
+          [
+            0.44,
+            0.5
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Lean your weight onto one hip and make a loose fist. Rub big, firm circles into the meat of the other buttock until it feels warm, then lean the other way and do the second side. Twenty seconds each is plenty.",
+      "commonMistake": "Do not use your knuckle points. Use the flat of your fist.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s03",
+      "regionID": "glutesHips",
+      "techniqueID": "selfMyofascial",
+      "title": "Sit on the ball",
+      "body": "Put the ball under one buttock, out from the middle. Sit down slowly and hunt around until you find the spot that talks back.",
+      "sensationCue": "A deep, dull ache in one small place. Never sharp or electric.",
+      "handPosition": "tool",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "Shift a little every ten seconds",
+      "breathCue": "Breathe out as you sink",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.48
+          ],
+          [
+            0.46,
+            0.5
+          ]
+        ],
+        "motion": "hold",
+        "loop": true
+      },
+      "voiceScript": "Put the ball on the chair and lower yourself onto it so it sits under the meaty part of one buttock, out from the middle. Shift around slowly until you find the spot that really talks back. Take some weight on your hands and feet if you want less pressure.",
+      "commonMistake": "Do not drop your full weight on straight away. Ease down.",
+      "caution": "Keep the ball off the tailbone and off the sitting bone. Muscle only.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s04",
+      "regionID": "glutesHips",
+      "techniqueID": "triggerPoint",
+      "title": "Cross your ankle and sink",
+      "body": "Rest the ankle of the ball side on your opposite knee. That opens the deep hip muscle, so let your weight settle in and hold.",
+      "sensationCue": "The ache gets deeper and more exact. Never a zing down the leg.",
+      "handPosition": "tool",
+      "pressure": 4,
+      "durationSeconds": 60,
+      "rhythm": "Hold thirty seconds, then ease off",
+      "breathCue": "Long breath out into the ball",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "hips",
+        "thighs"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.48
+          ],
+          [
+            0.445,
+            0.485
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Lift the foot on the ball side and rest that ankle on your opposite knee, letting the knee fall open. That opens up the deep muscle under the ball. Let your weight settle and hold for thirty slow seconds.",
+      "commonMistake": "Do not push the open knee down with your hand. Let it hang.",
+      "caution": "A sharp or electric feeling down the back of the leg means move the ball. That is nerve, not muscle.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s05",
+      "regionID": "glutesHips",
+      "techniqueID": "selfMyofascial",
+      "title": "Rock slowly over the spot",
+      "body": "Keep the ankle crossed and rock a small amount side to side. Let the ball roll across the muscle rather than along it.",
+      "sensationCue": "A rolling ache that moves as you rock. Never sharp.",
+      "handPosition": "tool",
+      "pressure": 3,
+      "durationSeconds": 55,
+      "rhythm": "One slow rock every four seconds",
+      "breathCue": "Breathe out on each pass",
+      "heroImage": "img.reg.back.alt2",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.48
+          ],
+          [
+            0.46,
+            0.48
+          ]
+        ],
+        "motion": "walk",
+        "loop": true
+      },
+      "voiceScript": "Keep that ankle crossed and rock a short distance from side to side, so the ball rolls across the muscle rather than along it. Small movements are enough. If a spot really bites, stop there and breathe until it eases.",
+      "commonMistake": "Do not go hunting for the worst pain. Strong but bearable is right.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s06",
+      "regionID": "glutesHips",
+      "techniqueID": "triggerPoint",
+      "title": "Find the deep hip knot",
+      "body": "Move the ball out towards the side of your hip, halfway between the tailbone and the bony point. Sink in and hold still.",
+      "sensationCue": "A wide ache that spreads through the buttock. Never down the leg.",
+      "handPosition": "tool",
+      "pressure": 4,
+      "durationSeconds": 60,
+      "rhythm": "Hold thirty seconds",
+      "breathCue": "Breathe out and let the hip drop",
+      "heroImage": "img.reg.back.alt",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.42,
+            0.47
+          ],
+          [
+            0.425,
+            0.475
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Move the ball outwards so it sits about halfway between your tailbone and the bony point at the side of your hip. That is where the deep hip muscle lies. Sink onto it and hold still for thirty seconds, breathing out slowly.",
+      "commonMistake": "Do not rub back and forth. Stillness is what softens a knot.",
+      "caution": "Come off it at once if you feel tingling or numbness in the leg.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s07",
+      "regionID": "glutesHips",
+      "techniqueID": "selfMyofascial",
+      "title": "Swap sides and repeat",
+      "body": "Lift off, move the ball under the other buttock, and work through the same three positions. Give this side the same time.",
+      "sensationCue": "Often more tender than the first side. Never sharp.",
+      "handPosition": "tool",
+      "pressure": 4,
+      "durationSeconds": 60,
+      "rhythm": "Twenty seconds in each position",
+      "breathCue": "Breathe out as you sink",
+      "heroImage": "img.reg.prone",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "hips"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.56,
+            0.48
+          ],
+          [
+            0.58,
+            0.5
+          ]
+        ],
+        "motion": "hold",
+        "loop": true
+      },
+      "voiceScript": "Lift your weight off and slide the ball under the other buttock. Work through the same three positions: sitting straight, then ankle crossed, then out towards the side of the hip. Give this side the same time even if it feels easier.",
+      "commonMistake": "Do not skip the easy side. Hips like to be even.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s08",
+      "regionID": "glutesHips",
+      "techniqueID": "stretch",
+      "title": "Sit into a figure four",
+      "body": "Take the ball away. Cross one ankle over the opposite knee and lean your chest forward, keeping your back long.",
+      "sensationCue": "A broad stretch deep in the buttock. Never a pinch at the front of the hip.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 50,
+      "rhythm": "Thirty seconds on each side",
+      "breathCue": "Breathe out and lean a little further",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#D8B79E",
+      "bodyMapZones": [
+        "hips",
+        "thighs"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.48
+          ],
+          [
+            0.5,
+            0.55
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Take the ball away and sit tall. Cross one ankle over the opposite knee, then hinge your chest forward, keeping your back long. Hold for thirty seconds where you feel a broad stretch deep in the buttock, then change sides.",
+      "commonMistake": "Do not round your back to get lower. Hinge from the hips.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "glute.solo.ball.s09",
+      "regionID": "glutesHips",
+      "techniqueID": "effleurage",
+      "title": "Stand up and walk it off",
+      "body": "Stand slowly and walk a few easy laps of the room. Stroke down the back of each hip with a flat palm as you go.",
+      "sensationCue": "Loose and slightly warm. Any stiffness should ease within a minute.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 50,
+      "rhythm": "Slow walking pace",
+      "breathCue": "Easy, natural breathing",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "hips",
+        "thighs"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.44,
+            0.47
+          ],
+          [
+            0.44,
+            0.55
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Stand up slowly and walk a few easy laps of the room. As you walk, stroke down the back of each hip with a flat palm a few times. Everything you have just worked on needs to remember how to move.",
+      "commonMistake": null,
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s01",
+      "regionID": "calfShin",
+      "techniqueID": "staticHold",
+      "title": "Check both calves first",
+      "body": "Look at and gently feel both calves. If one is swollen, warm, red or sore on that side only, stop now and see a doctor.",
+      "sensationCue": "Both calves should look and feel the same as each other.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 40,
+      "rhythm": "Still — look and compare",
+      "breathCue": "Easy, steady breathing",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.8
+          ],
+          [
+            0.59,
+            0.8
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Before anything else, sit down and compare your two calves, looking at them and resting a hand on each. If one is swollen, warm, red, or painful on one side only, do not massage it. Stop here and speak to a doctor first.",
+      "commonMistake": "Do not massage through a one-sided swollen, hot calf. Get it checked.",
+      "caution": "Rubbing a calf with a possible clot is dangerous. If in doubt, skip this routine and ask a doctor.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "dvtOrBloodThinners"
+      ]
+    },
+    {
+      "id": "calf.solo.release.s02",
+      "regionID": "foot",
+      "techniqueID": "stretch",
+      "title": "Circle your ankles and pump",
+      "body": "Lift one foot off the floor and circle the ankle slowly both ways. Then point and flex the foot ten times, and swap feet.",
+      "sensationCue": "Stiff at first, smoother by the end. Never a click that hurts.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 45,
+      "rhythm": "One slow circle every three seconds",
+      "breathCue": "Easy, steady breathing",
+      "heroImage": "img.reg.foot",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "feet",
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.4,
+            0.91
+          ],
+          [
+            0.42,
+            0.89
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Lift one foot off the floor and draw slow circles with your toes, five one way and five the other. Then point the foot away from you and pull it back ten times. Change feet and do the same again.",
+      "commonMistake": "Do not rush the circles. Big and slow beats fast and small.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s03",
+      "regionID": "calfShin",
+      "techniqueID": "effleurage",
+      "title": "Stroke the calf upward",
+      "body": "Rest one ankle on the opposite knee. Wrap both hands round the calf and stroke firmly from the heel up towards the knee.",
+      "sensationCue": "Warm and smooth. Nothing sharp, nothing that stings.",
+      "handPosition": "cGrip",
+      "pressure": 2,
+      "durationSeconds": 55,
+      "rhythm": "One long stroke every three seconds",
+      "breathCue": "Breathe out on each stroke",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.86
+          ],
+          [
+            0.41,
+            0.82
+          ],
+          [
+            0.41,
+            0.77
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Rest one ankle across your opposite knee so you can reach the calf easily. Wrap both hands round it and stroke firmly from the heel up towards the knee, then lift off and start again from the bottom. Always stroke upwards.",
+      "commonMistake": "Do not stroke downwards. Work up towards the heart.",
+      "caution": "Stop below the crease at the back of the knee. Never press into it.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s04",
+      "regionID": "calfShin",
+      "techniqueID": "petrissage",
+      "title": "Squeeze the belly of the calf",
+      "body": "Take the thickest part of the calf between your fingers and the heel of your hand. Squeeze, hold a second, let go, and move down.",
+      "sensationCue": "A deep, dull ache that softens as you go. Never sharp.",
+      "handPosition": "cGrip",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "One squeeze every two seconds",
+      "breathCue": "Breathe out as you squeeze",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.79
+          ],
+          [
+            0.41,
+            0.82
+          ],
+          [
+            0.41,
+            0.85
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Find the thickest part of the calf, about a hand's width below the knee. Take it between your fingers and the heel of your hand, squeeze for a second, then let go and move a little lower. Work down to the ankle and back up again.",
+      "commonMistake": "Do not pinch with your fingertips. Use the whole hand.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s05",
+      "regionID": "calfShin",
+      "techniqueID": "selfMyofascial",
+      "title": "Roll the calf on a towel",
+      "body": "Sit on the floor with your legs out and a rolled towel under one calf. Lift your hips slightly and slide the leg over it.",
+      "sensationCue": "Broad, even pressure. A good ache, never a bruised sting.",
+      "handPosition": "tool",
+      "pressure": 3,
+      "durationSeconds": 55,
+      "rhythm": "One slow pass every eight seconds",
+      "breathCue": "Breathe out as you roll",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.84
+          ],
+          [
+            0.41,
+            0.78
+          ]
+        ],
+        "motion": "walk",
+        "loop": true
+      },
+      "voiceScript": "Sit on the floor with your legs straight out and put a rolled towel or a foam roller under one calf. Press your hands into the floor to lift your hips a little, then slide the leg so the roll travels from the ankle to just below the knee. Cross the other ankle on top if you want more weight.",
+      "commonMistake": "Do not race up and down. One slow pass finds more than ten fast ones.",
+      "caution": "Roll only as far as just below the knee. Never on the soft crease behind it.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s06",
+      "regionID": "calfShin",
+      "techniqueID": "friction",
+      "title": "Work the cord above your heel",
+      "body": "Pinch the firm cord above your heel between thumb and finger. Slide slowly up until it widens into muscle, then repeat.",
+      "sensationCue": "Firm and slightly tender. Never a hot, burning line.",
+      "handPosition": "pincerGrip",
+      "pressure": 3,
+      "durationSeconds": 55,
+      "rhythm": "One slow slide every five seconds",
+      "breathCue": "Steady, easy breathing",
+      "heroImage": "img.reg.foot.alt",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "calves",
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.88
+          ],
+          [
+            0.41,
+            0.84
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Find the firm cord just above your heel and take it lightly between your thumb and first finger. Slide slowly upwards until it spreads out into the soft muscle of the calf. Do that four or five times, then swap legs.",
+      "commonMistake": "Do not squeeze the cord hard. Light and slow is right here.",
+      "caution": "Ease off if this area is hot, puffy, or painful when you walk.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s07",
+      "regionID": "calfShin",
+      "techniqueID": "deepTissue",
+      "title": "Thumb down the shin muscle",
+      "body": "Feel the sharp edge of your shin bone, then step your thumb just outside it. Press and glide slowly down the muscle to the ankle.",
+      "sensationCue": "Tender and stringy at first, easier on the second pass. Never bone pain.",
+      "handPosition": "thumbPad",
+      "pressure": 3,
+      "durationSeconds": 60,
+      "rhythm": "One slow glide every six seconds",
+      "breathCue": "Breathe out on the way down",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.43,
+            0.76
+          ],
+          [
+            0.42,
+            0.82
+          ],
+          [
+            0.41,
+            0.87
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Run a finger down the front of your shin until you feel the sharp edge of the bone. Move just to the outside of it and you are on the muscle that lifts your foot. Press with your thumb and glide slowly down towards the ankle, four or five passes on each leg.",
+      "commonMistake": "Do not press on the bone. It hurts and it does nothing.",
+      "caution": "Sharp pain along the bone itself needs rest, not pressure. See a doctor if it keeps up.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s08",
+      "regionID": "calfShin",
+      "techniqueID": "stretch",
+      "title": "Stretch your calf at the wall",
+      "body": "Put both hands on the wall and step one foot well back. Keep that leg straight, press the heel down, and hold.",
+      "sensationCue": "A long pull up the back of the calf. Never a pinch at the ankle.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 50,
+      "rhythm": "Twenty-five seconds on each leg",
+      "breathCue": "Breathe out and sink a little lower",
+      "heroImage": "img.reg.leg",
+      "heroPlaceholderHex": "#D8B79E",
+      "bodyMapZones": [
+        "calves"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.78
+          ],
+          [
+            0.4,
+            0.88
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Stand facing a wall with both hands on it. Step one foot well back, keep that leg straight, and press the heel down into the floor until you feel a long pull up the calf. Hold for twenty-five seconds, then swap legs.",
+      "commonMistake": "Do not let the back heel lift. The heel down is the stretch.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "calf.solo.release.s09",
+      "regionID": "calfShin",
+      "techniqueID": "effleurage",
+      "title": "Long strokes, then feet up",
+      "body": "Sit down and stroke both calves from ankle to knee with flat palms. Then rest your feet up on a chair for a minute.",
+      "sensationCue": "Light, drifting and warm. Legs should feel lighter than they did.",
+      "handPosition": "flatPalm",
+      "pressure": 1,
+      "durationSeconds": 60,
+      "rhythm": "One slow stroke every four seconds",
+      "breathCue": "In for four, out for six",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "calves",
+        "feet"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.41,
+            0.88
+          ],
+          [
+            0.41,
+            0.78
+          ]
+        ],
+        "motion": "glide",
+        "loop": true
+      },
+      "voiceScript": "Sit back down and stroke both calves with flat palms, always from the ankle up towards the knee, light and slow. Then put your feet up on a chair or a cushion and stay there for a minute. Your legs will thank you.",
+      "commonMistake": null,
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "desk.solo.reset.s01",
+      "regionID": "neck",
+      "techniqueID": "staticHold",
+      "title": "Sit back and take three breaths",
+      "body": "Push your chair back a little and put both feet flat. Let your shoulders drop and take three slow breaths out.",
+      "sensationCue": "Shoulders settle a little lower. Nothing to feel yet.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 30,
+      "rhythm": "Still — no movement",
+      "breathCue": "Out for longer than in",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "shoulders",
+        "chest"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.49,
+            0.26
+          ],
+          [
+            0.51,
+            0.26
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Push your chair back from the desk and put both feet flat on the floor. Let your shoulders drop away from your ears, and take three slow breaths, each one out longer than it went in. Nobody will even notice.",
+      "commonMistake": "Do not skip this. Thirty still seconds sets up the rest.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "desk.solo.reset.s02",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "stretch",
+      "title": "Roll your shoulders backward",
+      "body": "Roll both shoulders up, back and down in slow circles. Let them land lower each time, as if shrugging off a heavy coat.",
+      "sensationCue": "Loose and easy. No pinching at the top of the circle.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 35,
+      "rhythm": "One roll every four seconds",
+      "breathCue": "Breathe out as they drop",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.37,
+            0.2
+          ],
+          [
+            0.63,
+            0.2
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Roll both shoulders up towards your ears, then back and down in a slow circle. Let them land a little lower each time, like you are shrugging off a heavy coat. Eight or nine slow rolls is plenty.",
+      "commonMistake": "Do not roll fast. Slow circles loosen more.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "desk.solo.reset.s03",
+      "regionID": "shouldersUpperTrap",
+      "techniqueID": "petrissage",
+      "title": "Squeeze the top of your shoulder",
+      "body": "Reach across and grip the ridge of muscle on top of the other shoulder. Squeeze, lift slightly, let go, then swap sides.",
+      "sensationCue": "A deep, dull ache that eases as you squeeze. Never sharp.",
+      "handPosition": "pincerGrip",
+      "pressure": 3,
+      "durationSeconds": 40,
+      "rhythm": "About one squeeze per second",
+      "breathCue": "Breathe out as you squeeze",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.37,
+            0.2
+          ],
+          [
+            0.44,
+            0.19
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Reach one hand across to the opposite shoulder and take the ridge of muscle on top between your thumb and fingers. Squeeze, lift it slightly, and let it go, like kneading dough. Twenty seconds each side, and it just looks like you are thinking.",
+      "commonMistake": "Do not pinch with your fingertips. Use the flat of your fingers.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "desk.solo.reset.s04",
+      "regionID": "neck",
+      "techniqueID": "stretch",
+      "title": "Lean your ear towards your shoulder",
+      "body": "Hold the side of your chair seat with one hand. Tip your ear towards the other shoulder and let the weight of your head do the work.",
+      "sensationCue": "A long, even pull down the side of the neck. Never a pinch.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 40,
+      "rhythm": "Twenty seconds on each side",
+      "breathCue": "Breathe out and let it lengthen",
+      "heroImage": "img.reg.shoulder",
+      "heroPlaceholderHex": "#C2A58E",
+      "bodyMapZones": [
+        "neck",
+        "shoulders"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.16
+          ],
+          [
+            0.44,
+            0.18
+          ]
+        ],
+        "motion": "stretch",
+        "loop": false
+      },
+      "voiceScript": "Take hold of the side of your chair seat with one hand, to anchor that shoulder down. Tip your ear towards the opposite shoulder and simply let the weight of your head stretch the side of your neck. Twenty slow seconds, then change hands and sides.",
+      "commonMistake": "Do not pull your head over with your hand. Let gravity do it.",
+      "caution": "Ease off straight away if you feel tingling in your arm or hand.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "recentNeckInjury"
+      ]
+    },
+    {
+      "id": "desk.solo.reset.s05",
+      "regionID": "forearm",
+      "techniqueID": "petrissage",
+      "title": "Squeeze along your forearm",
+      "body": "Rest one forearm on the desk. Squeeze along it from elbow to wrist with your other hand, turning the arm over to do both sides.",
+      "sensationCue": "Firm and achy, more tender than you expect. Never tingly.",
+      "handPosition": "cGrip",
+      "pressure": 3,
+      "durationSeconds": 40,
+      "rhythm": "One squeeze per second, moving down",
+      "breathCue": "Steady, easy breathing",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#A8836B",
+      "bodyMapZones": [
+        "forearms"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.27,
+            0.36
+          ],
+          [
+            0.26,
+            0.4
+          ],
+          [
+            0.25,
+            0.44
+          ]
+        ],
+        "motion": "knead",
+        "loop": true
+      },
+      "voiceScript": "Rest one forearm on the desk and squeeze along it with your other hand, starting below the elbow and working towards the wrist. Turn the arm over and do that side too. Stop before you reach the wrist crease.",
+      "commonMistake": "Do not squeeze the wrist crease. Stop short of it.",
+      "caution": "Stay off the middle of the wrist crease.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": [
+        "carpalTunnel"
+      ]
+    },
+    {
+      "id": "desk.solo.reset.s06",
+      "regionID": "hand",
+      "techniqueID": "reflexology",
+      "title": "Press into your palm and web",
+      "body": "Press your thumb into the middle of the other palm and make slow circles. Then squeeze the fleshy pad below the thumb.",
+      "sensationCue": "A satisfying, spreading ache. Never a sharp point.",
+      "handPosition": "thumbPad",
+      "pressure": 3,
+      "durationSeconds": 40,
+      "rhythm": "Three circles, then move on",
+      "breathCue": "Breathe out into the pressure",
+      "heroImage": "img.reg.hand",
+      "heroPlaceholderHex": "#B98F76",
+      "bodyMapZones": [
+        "hands"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.23,
+            0.5
+          ],
+          [
+            0.24,
+            0.51
+          ],
+          [
+            0.22,
+            0.51
+          ]
+        ],
+        "motion": "circle",
+        "loop": true
+      },
+      "voiceScript": "Press your thumb into the middle of your other palm and make slow circles, working outward. Then take the fleshy pad below the thumb and squeeze it between your thumb and fingers. Give each hand about twenty seconds.",
+      "commonMistake": "Do not dig with your thumb tip. Use the flat pad.",
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "desk.solo.reset.s07",
+      "regionID": "face",
+      "techniqueID": "staticHold",
+      "title": "Rest your palms over your eyes",
+      "body": "Lean your elbows on the desk and cup your palms over your closed eyes without touching them. Sit in the dark and breathe.",
+      "sensationCue": "Warm and dark, with no pressure on the eyes at all.",
+      "handPosition": "cuppedHand",
+      "pressure": 1,
+      "durationSeconds": 40,
+      "rhythm": "Still — no movement",
+      "breathCue": "Four slow breaths out",
+      "heroImage": "img.reg.face",
+      "heroPlaceholderHex": "#D8B79E",
+      "bodyMapZones": [
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.47,
+            0.09
+          ],
+          [
+            0.53,
+            0.09
+          ]
+        ],
+        "motion": "hold",
+        "loop": false
+      },
+      "voiceScript": "Lean your elbows on the desk and cup your palms over your closed eyes, resting the edges of your hands on your cheekbones so nothing presses on the eyes. Sit in the warm dark for four slow breaths. It looks like you are reading something difficult.",
+      "commonMistake": "Do not press on your eyes. Rest the weight on the bone.",
+      "caution": "Never put pressure on the eyeball itself.",
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    },
+    {
+      "id": "desk.solo.reset.s08",
+      "regionID": "neck",
+      "techniqueID": "stretch",
+      "title": "Tuck your chin and look far",
+      "body": "Draw your chin straight back to make a double chin, hold five seconds, then release. Finish by looking at the furthest thing you can see.",
+      "sensationCue": "A stretch at the base of the skull, then easier eyes.",
+      "handPosition": "none",
+      "pressure": 1,
+      "durationSeconds": 35,
+      "rhythm": "Five seconds on, five seconds off",
+      "breathCue": "Breathe out as you tuck",
+      "heroImage": "img.reg.rest",
+      "heroPlaceholderHex": "#C9A188",
+      "bodyMapZones": [
+        "neck",
+        "head"
+      ],
+      "strokePath": {
+        "points": [
+          [
+            0.5,
+            0.16
+          ],
+          [
+            0.5,
+            0.13
+          ]
+        ],
+        "motion": "stretch",
+        "loop": true
+      },
+      "voiceScript": "Draw your chin straight back, not down, so you make a bit of a double chin. Hold for five seconds and let go, three or four times. Then find the furthest thing you can see, out of a window if there is one, and look at it for twenty seconds.",
+      "commonMistake": null,
+      "caution": null,
+      "modes": [
+        "solo"
+      ],
+      "contraindications": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+name: Build check
+
+# Runs on every push. No secrets, no signing, no Apple account needed.
+# This is your fast feedback loop: if this is green, the code compiles and the
+# tests pass, and the TestFlight workflow will get as far as signing.
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Compile & test (simulator)
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Fetch photography
+        run: bash Scripts/fetch_assets.sh
+        continue-on-error: true
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Validate content pack
+        run: python3 Scripts/build_content.py
+
+      - name: Build for simulator
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing \
+            -project Kneadly.xcodeproj \
+            -scheme Kneadly \
+            -configuration Debug \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO \
+            | xcpretty || xcodebuild build-for-testing \
+              -project Kneadly.xcodeproj \
+              -scheme Kneadly \
+              -configuration Debug \
+              -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+              CODE_SIGNING_ALLOWED=NO
+
+      - name: Run unit tests
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
+            -project Kneadly.xcodeproj \
+            -scheme Kneadly \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            CODE_SIGNING_ALLOWED=NO

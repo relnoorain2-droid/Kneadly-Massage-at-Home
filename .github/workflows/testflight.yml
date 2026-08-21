@@ -1,0 +1,108 @@
+name: TestFlight
+
+# Builds, signs and uploads to TestFlight from a macOS runner.
+# You do NOT need a Mac. You need four repository secrets — see
+# TESTFLIGHT_RUNBOOK.md §3 for exactly where each one comes from:
+#
+#   APPLE_TEAM_ID                 e.g. A1B2C3D4E5
+#   APP_STORE_CONNECT_KEY_ID      e.g. 2X9ABCD3EF
+#   APP_STORE_CONNECT_ISSUER_ID   e.g. 69a6de70-....-....-....-............
+#   APP_STORE_CONNECT_PRIVATE_KEY the whole contents of AuthKey_XXXX.p8
+#
+# Signing is automatic: -allowProvisioningUpdates lets Xcode create and download
+# the distribution certificate and provisioning profile on the runner using the
+# API key. Nothing to generate by hand, nothing to store in a repo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      notes:
+        description: "What testers should try in this build"
+        required: false
+        default: "First TestFlight build."
+  push:
+    tags: ["v*"]
+
+jobs:
+  upload:
+    name: Archive & upload
+    runs-on: macos-15
+    timeout-minutes: 60
+
+    env:
+      SCHEME: Kneadly
+      BUNDLE_ID: com.kneadly.app
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Fetch photography
+        run: bash Scripts/fetch_assets.sh
+        continue-on-error: true
+
+      - name: Set build number
+        run: bash Scripts/bump_build.sh "${{ github.run_number }}"
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Write App Store Connect API key
+        env:
+          KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+        run: |
+          mkdir -p ~/private_keys
+          printf '%s' "$KEY" > ~/private_keys/AuthKey_${KEY_ID}.p8
+          chmod 600 ~/private_keys/AuthKey_${KEY_ID}.p8
+          echo "AUTH_KEY_PATH=$HOME/private_keys/AuthKey_${KEY_ID}.p8" >> "$GITHUB_ENV"
+
+      - name: Archive
+        run: |
+          set -o pipefail
+          xcodebuild archive \
+            -project Kneadly.xcodeproj \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/Kneadly.xcarchive" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$AUTH_KEY_PATH" \
+            -authenticationKeyID "${{ secrets.APP_STORE_CONNECT_KEY_ID }}" \
+            -authenticationKeyIssuerID "${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}" \
+            DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
+            CODE_SIGN_STYLE=Automatic
+
+      - name: Export and upload to TestFlight
+        run: |
+          set -o pipefail
+          /usr/libexec/PlistBuddy -c "Add :teamID string ${{ secrets.APPLE_TEAM_ID }}" ExportOptions.plist 2>/dev/null || \
+          /usr/libexec/PlistBuddy -c "Set :teamID ${{ secrets.APPLE_TEAM_ID }}" ExportOptions.plist
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/Kneadly.xcarchive" \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath "$RUNNER_TEMP/export" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$AUTH_KEY_PATH" \
+            -authenticationKeyID "${{ secrets.APP_STORE_CONNECT_KEY_ID }}" \
+            -authenticationKeyIssuerID "${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}"
+
+      - name: Upload build artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-${{ github.run_number }}
+          path: |
+            ${{ runner.temp }}/export
+            ${{ runner.temp }}/Kneadly.xcarchive/Info.plist
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Clean up API key
+        if: always()
+        run: rm -f ~/private_keys/*.p8
