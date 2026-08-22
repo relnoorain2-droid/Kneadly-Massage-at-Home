@@ -23,10 +23,6 @@ jobs:
       - name: Install XcodeGen
         run: brew install xcodegen
 
-      - name: Fetch photography
-        run: bash Scripts/fetch_assets.sh
-        continue-on-error: true
-
       - name: Generate Xcode project
         run: xcodegen generate
 

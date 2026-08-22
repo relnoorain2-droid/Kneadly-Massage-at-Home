@@ -42,10 +42,6 @@ jobs:
       - name: Install XcodeGen
         run: brew install xcodegen
 
-      - name: Fetch photography
-        run: bash Scripts/fetch_assets.sh
-        continue-on-error: true
-
       - name: Set build number
         run: bash Scripts/bump_build.sh "${{ github.run_number }}"
 
