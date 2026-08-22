@@ -249,6 +249,7 @@ struct HealthAnswersView: View {
 
 struct AboutView: View {
     @Environment(AppEnvironment.self) private var env
+    @State private var legalDocument: LegalDocument?
 
     var body: some View {
         ArticleScaffold(title: "About \(AppBrand.name)",
@@ -257,12 +258,13 @@ struct AboutView: View {
             InfoBlock(title: "Important", body: AppBrand.disclaimer)
             InfoBlock(title: "Photography",
                       body: "Photographs are used under the Unsplash and Pexels licences. Thank you to every photographer whose work appears in this app.")
-            Link("Privacy policy", destination: AppBrand.privacyURL)
+            Button("Privacy policy") { legalDocument = .privacy }
                 .font(.kCallout).padding(.vertical, 6)
-            Link("Terms of service", destination: AppBrand.termsURL)
+            Button("Terms of use") { legalDocument = .terms }
                 .font(.kCallout).padding(.vertical, 6)
             Button("Restore purchases") { Task { await env.subscriptions.restore() } }
                 .font(.kCallout).padding(.vertical, 6)
         }
+        .sheet(item: $legalDocument) { LegalView(document: $0) }
     }
 }

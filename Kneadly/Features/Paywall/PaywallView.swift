@@ -8,6 +8,7 @@ struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var selectedPlan: SubscriptionService.PlanID = .annual
     @State private var isPurchasing = false
+    @State private var legalDocument: LegalDocument?
 
     var body: some View {
         ZStack {
@@ -48,8 +49,8 @@ struct PaywallView: View {
 
                 HStack(spacing: 14) {
                     Button("Restore") { Task { await env.subscriptions.restore() } }
-                    Link("Terms", destination: AppBrand.termsURL)
-                    Link("Privacy", destination: AppBrand.privacyURL)
+                    Button("Terms of Use") { legalDocument = .terms }
+                    Button("Privacy Policy") { legalDocument = .privacy }
                 }
                 .font(.system(size: 11.5))
                 .foregroundStyle(K.bone.opacity(0.5))
@@ -86,6 +87,7 @@ struct PaywallView: View {
         .onChange(of: env.subscriptions.isPlus) { _, isPlus in
             if isPlus { dismiss() }
         }
+        .sheet(item: $legalDocument) { LegalView(document: $0) }
     }
 
     private func benefit(_ symbol: String, _ title: String, _ subtitle: String) -> some View {
@@ -173,16 +175,19 @@ struct PaywallView: View {
         }
     }
 
+    /// Apple requires the paywall itself to state the subscription title, its
+    /// length, its price, and that it auto-renews until cancelled (Guideline 3.1.2).
     private var fineprint: String {
+        let price = env.subscriptions.priceString(selectedPlan)
         switch selectedPlan {
         case .lifetime:
-            return "One payment. Yours forever, on every device you sign in to."
+            return "Kneadly Plus Lifetime — \(price), one payment. Not a subscription: it does not renew and is never charged again."
         case .weekly:
-            return "Cancel anytime. We'll remind you before the trial ends."
+            return "Kneadly Plus Weekly — \(price) per week. Payment is charged to your Apple Account at confirmation. It renews automatically each week unless you turn off auto-renew at least 24 hours before the period ends. Manage or cancel anytime in Settings › Apple Account › Subscriptions."
         case .monthly:
-            return "Cancel anytime from your Apple account settings."
+            return "Kneadly Plus Monthly — \(price) per month. Payment is charged to your Apple Account at confirmation. It renews automatically each month unless you turn off auto-renew at least 24 hours before the period ends. Manage or cancel anytime in Settings › Apple Account › Subscriptions."
         case .annual:
-            return "Cancel anytime. We'll remind you 2 days before the trial ends."
+            return "Kneadly Plus Yearly — \(price) per year. Payment is charged to your Apple Account at confirmation. It renews automatically each year unless you turn off auto-renew at least 24 hours before the period ends. Manage or cancel anytime in Settings › Apple Account › Subscriptions."
         }
     }
 
@@ -199,6 +204,8 @@ struct PaywallView: View {
         }
     }
 
+    /// "SAVE 89%" against paying weekly for a year, falling back to a plain
+    /// label if StoreKit prices are not loaded yet.
     private var savingsBadge: String {
         let percent = env.subscriptions.annualSavingsPercent()
         return percent > 0 ? "SAVE \(percent)%" : "BEST VALUE"
