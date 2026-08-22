@@ -75,3 +75,18 @@ issue #1. **Deliver it as pasted text.**
 - Photos come from Scripts/fetch_assets.sh; if it fails the app falls back to
   gradients and still looks intentional. Never a blocker.
 - Health answers never leave the device — keep it that way.
+## 9. PowerShell trap that cost three rounds
+
+`cd` changes PowerShell's location but NOT the .NET current directory. So
+`[IO.File]::ReadAllText(".\project.yml")` reads `C:\Users\user\project.yml`
+and silently does nothing useful.
+
+Always either:
+- use absolute paths (`"$root\project.yml"`), or
+- call `[IO.Directory]::SetCurrentDirectory($PWD)` first
+
+Scripts using `$_.FullName` from Get-ChildItem are safe (already absolute).
+Symptom: edit reports success or "anchor not found", but the file is unchanged.
+
+Also: this user's files are CRLF. Multi-line string matching against LF
+here-strings fails silently. Match single lines, or use ReadAllLines.
