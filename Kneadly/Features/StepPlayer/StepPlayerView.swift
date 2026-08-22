@@ -110,17 +110,11 @@ struct StepPlayerView: View {
     }
 
     private func hero(_ model: StepPlayerModel) -> some View {
-        ZStack(alignment: .bottomLeading) {
-            KPhoto(id: model.step.heroImage, placeholderHex: model.step.heroPlaceholderHex)
-            LinearGradient(colors: [.clear, K.ink900.opacity(0.55)], startPoint: .center, endPoint: .bottom)
-
-            BodyMapMini(zones: model.step.bodyMapZones, strokePath: model.step.strokePath)
-                .padding(5)
-                .frame(width: 74, height: 98)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .strokeBorder(K.bone.opacity(0.1), lineWidth: 1))
-                .padding(10)
+        ZStack(alignment: .topTrailing) {
+            StepDiagram(zones: model.step.bodyMapZones,
+                        strokePath: model.step.strokePath,
+                        handPosition: model.step.handPosition,
+                        caption: ContentStore.regionTitle(model.step.regionID))
 
             Text(model.timeLabel)
                 .font(.kTimer)
@@ -128,11 +122,9 @@ struct StepPlayerView: View {
                 .padding(.horizontal, 12).padding(.vertical, 6)
                 .background(.ultraThinMaterial, in: Capsule())
                 .padding(10)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                 .accessibilityLabel("\(model.remaining) seconds remaining")
         }
-        .frame(height: 252)
-        .clipShape(RoundedRectangle(cornerRadius: KRadius.lg, style: .continuous))
+        .frame(height: 290)
         .padding(.horizontal, 18)
         .padding(.top, 13)
     }
