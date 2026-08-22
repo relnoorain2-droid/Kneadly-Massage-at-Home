@@ -39,8 +39,9 @@ final class NarrationPlayer: NSObject {
         guard enabled, !text.isEmpty else { return }
         stop()
         let utterance = AVSpeechUtterance(string: text)
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.92
-        utterance.pitchMultiplier = 0.98
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.88
+        utterance.pitchMultiplier = 0.96
+        utterance.preUtteranceDelay = 0.15
         utterance.postUtteranceDelay = 0.2
         utterance.voice = Self.preferredVoice()
         synth.speak(utterance)
@@ -60,11 +61,30 @@ final class NarrationPlayer: NSObject {
     }
 
     private static func preferredVoice() -> AVSpeechSynthesisVoice? {
-        let language = Locale.preferredLanguages.first ?? "en-GB"
-        if let enhanced = AVSpeechSynthesisVoice.speechVoices().first(where: {
-            $0.language.hasPrefix(String(language.prefix(2))) && $0.quality != .default
-        }) { return enhanced }
-        return AVSpeechSynthesisVoice(language: language) ?? AVSpeechSynthesisVoice(language: "en-GB")
+        let code = String((Locale.preferredLanguages.first ?? "en-GB").prefix(2))
+        let candidates = AVSpeechSynthesisVoice.speechVoices()
+            .filter { $0.language.hasPrefix(code) }
+
+        func best(_ quality: AVSpeechSynthesisVoiceQuality) -> AVSpeechSynthesisVoice? {
+            let preferredNames = ["Serena", "Sonia", "Ava", "Kate", "Zoe", "Nathan", "Daniel"]
+            let pool = candidates.filter { $0.quality == quality }
+            for name in preferredNames {
+                if let match = pool.first(where: { $0.name.contains(name) }) { return match }
+            }
+            return pool.first
+        }
+
+        return best(.premium)
+            ?? best(.enhanced)
+            ?? best(.default)
+            ?? AVSpeechSynthesisVoice(language: "en-GB")
+    }
+
+    static var isUsingCompactVoiceOnly: Bool {
+        let code = String((Locale.preferredLanguages.first ?? "en-GB").prefix(2))
+        return !AVSpeechSynthesisVoice.speechVoices()
+            .filter { $0.language.hasPrefix(code) }
+            .contains { $0.quality != .default }
     }
 }
 
