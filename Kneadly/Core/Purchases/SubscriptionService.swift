@@ -7,12 +7,14 @@ import Observation
 final class SubscriptionService {
 
     enum PlanID: String, CaseIterable {
-        case monthly = "com.kneadlymassage.app.plus.monthly"
-        case annual  = "com.kneadlymassage.app.plus.annual"
+        case weekly   = "com.kneadlymassage.app.plus.weekly"
+        case monthly  = "com.kneadlymassage.app.plus.monthly"
+        case annual   = "com.kneadlymassage.app.plus.annual"
         case lifetime = "com.kneadlymassage.app.plus.lifetime"
 
         var displayName: String {
             switch self {
+            case .weekly: return "Weekly"
             case .monthly: return "Monthly"
             case .annual: return "Annual"
             case .lifetime: return "Lifetime"
@@ -20,6 +22,15 @@ final class SubscriptionService {
         }
 
         var isSubscription: Bool { self != .lifetime }
+
+        var sortOrder: Int {
+            switch self {
+            case .weekly: return 0
+            case .monthly: return 1
+            case .annual: return 2
+            case .lifetime: return 3
+            }
+        }
     }
 
     private(set) var products: [Product] = []
@@ -45,12 +56,9 @@ final class SubscriptionService {
             let ids = PlanID.allCases.map(\.rawValue)
             let fetched = try await Product.products(for: ids)
             products = fetched.sorted { lhs, rhs in
-                let order: [String: Int] = [
-                    PlanID.annual.rawValue: 0,
-                    PlanID.monthly.rawValue: 1,
-                    PlanID.lifetime.rawValue: 2
-                ]
-                return (order[lhs.id] ?? 9) < (order[rhs.id] ?? 9)
+                let lhsOrder = PlanID(rawValue: lhs.id)?.sortOrder ?? 9
+                let rhsOrder = PlanID(rawValue: rhs.id)?.sortOrder ?? 9
+                return lhsOrder < rhsOrder
             }
             lastError = nil
         } catch {
@@ -135,9 +143,19 @@ final class SubscriptionService {
 
     private func placeholderPrice(_ plan: PlanID) -> String {
         switch plan {
-        case .monthly: return "$9.99"
-        case .annual: return "$49.99"
-        case .lifetime: return "$99.99"
+        case .weekly: return "$6.99"
+        case .monthly: return "$12.99"
+        case .annual: return "$39.99"
+        case .lifetime: return "$69.99"
         }
+    }
+
+    func annualSavingsPercent() -> Int {
+        let weeklyPrice = product(.weekly)?.price ?? 6.99
+        let annualPrice = product(.annual)?.price ?? 39.99
+        let yearOfWeekly = weeklyPrice * 52
+        guard yearOfWeekly > 0, annualPrice < yearOfWeekly else { return 0 }
+        let saving = (yearOfWeekly - annualPrice) / yearOfWeekly * 100
+        return Int(NSDecimalNumber(decimal: saving).doubleValue.rounded())
     }
 }

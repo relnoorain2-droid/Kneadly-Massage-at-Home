@@ -125,7 +125,7 @@ struct PaywallView: View {
                 }
                 Spacer(minLength: 0)
                 if plan == .annual {
-                    Text("BEST VALUE")
+                    Text(savingsBadge)
                         .font(.system(size: 10, weight: .bold))
                         .tracking(0.4)
                         .foregroundStyle(K.bone)
@@ -147,30 +147,43 @@ struct PaywallView: View {
     private func priceLine(_ plan: SubscriptionService.PlanID) -> String {
         let price = env.subscriptions.priceString(plan)
         switch plan {
+        case .weekly:
+            return "\(price)/week · 3 days free"
+        case .monthly:
+            return "\(price)/month"
         case .annual:
             if let monthly = env.subscriptions.monthlyEquivalent(.annual) {
-                return "\(price)/yr · \(monthly) per month"
+                return "\(price)/year · \(monthly) per month"
             }
             return "\(price) per year"
-        case .monthly:
-            return "\(price)/mo"
         case .lifetime:
-            return "\(price) once"
+            return "\(price) once · yours forever"
         }
     }
 
     private var ctaTitle: String {
         if isPurchasing { return "One moment…" }
-        if selectedPlan != .lifetime, env.subscriptions.hasIntroOffer(selectedPlan) {
-            return "Start 7-day free trial"
+        guard selectedPlan != .lifetime, env.subscriptions.hasIntroOffer(selectedPlan) else {
+            return "Continue"
         }
-        return "Continue"
+        switch selectedPlan {
+        case .weekly: return "Start 3-day free trial"
+        case .annual: return "Start 7-day free trial"
+        default: return "Continue"
+        }
     }
 
     private var fineprint: String {
-        selectedPlan == .lifetime
-            ? "One payment. Yours forever, on every device you sign in to."
-            : "Cancel anytime. We'll remind you 2 days before the trial ends."
+        switch selectedPlan {
+        case .lifetime:
+            return "One payment. Yours forever, on every device you sign in to."
+        case .weekly:
+            return "Cancel anytime. We'll remind you before the trial ends."
+        case .monthly:
+            return "Cancel anytime from your Apple account settings."
+        case .annual:
+            return "Cancel anytime. We'll remind you 2 days before the trial ends."
+        }
     }
 
     private var headline: String {
@@ -184,6 +197,11 @@ struct PaywallView: View {
         case .settings:
             return "Every routine.\nBoth of your hands."
         }
+    }
+
+    private var savingsBadge: String {
+        let percent = env.subscriptions.annualSavingsPercent()
+        return percent > 0 ? "SAVE \(percent)%" : "BEST VALUE"
     }
 
     private var heroImage: String {
