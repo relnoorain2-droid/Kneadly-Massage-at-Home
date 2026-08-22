@@ -1,2 +1,2 @@
-app_identifier("com.kneadly.app")
+app_identifier("com.kneadly-Massage.app")
 team_id(ENV["APPLE_TEAM_ID"])
