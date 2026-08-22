@@ -109,12 +109,30 @@ struct StepPlayerView: View {
         .accessibilityHidden(true)
     }
 
+    /// Photograph of the technique, with the body map inset over it so you can
+    /// see *what* the hands do and *where* they do it at the same time. Neither
+    /// alone was enough: the photo without the map does not say where to press,
+    /// and the map without the photo does not say how to hold your hands.
     private func hero(_ model: StepPlayerModel) -> some View {
-        ZStack(alignment: .topTrailing) {
+        ZStack {
+            KPhoto(id: model.step.techniqueImage,
+                   fallbackID: model.step.heroImage,
+                   placeholderHex: model.step.heroPlaceholderHex)
+
+            PhotoScrim(strength: 0.85)
+
             StepDiagram(zones: model.step.bodyMapZones,
                         strokePath: model.step.strokePath,
                         handPosition: model.step.handPosition,
-                        caption: ContentStore.regionTitle(model.step.regionID))
+                        compact: true)
+                .frame(width: 84, height: 112)
+                .overlay(
+                    RoundedRectangle(cornerRadius: KRadius.md, style: .continuous)
+                        .strokeBorder(K.bone.opacity(0.28), lineWidth: 1)
+                )
+                .shadow(color: K.ink900.opacity(0.45), radius: 10, y: 4)
+                .padding(12)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
 
             Text(model.timeLabel)
                 .font(.kTimer)
@@ -122,9 +140,30 @@ struct StepPlayerView: View {
                 .padding(.horizontal, 12).padding(.vertical, 6)
                 .background(.ultraThinMaterial, in: Capsule())
                 .padding(10)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                 .accessibilityLabel("\(model.remaining) seconds remaining")
+
+            VStack(alignment: .trailing, spacing: 3) {
+                Text("PRESS HERE")
+                    .font(.system(size: 9.5, weight: .bold))
+                    .tracking(1.0)
+                    .foregroundStyle(K.bone.opacity(0.75))
+                Text(ContentStore.regionTitle(model.step.regionID))
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(K.bone)
+                if let motion = model.step.strokePath?.motion {
+                    Text(motion.staticDescription)
+                        .font(.system(size: 11.5))
+                        .foregroundStyle(K.bone.opacity(0.72))
+                        .multilineTextAlignment(.trailing)
+                }
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+            .accessibilityHidden(true)
         }
         .frame(height: 290)
+        .clipShape(RoundedRectangle(cornerRadius: KRadius.lg, style: .continuous))
         .padding(.horizontal, 18)
         .padding(.top, 13)
     }

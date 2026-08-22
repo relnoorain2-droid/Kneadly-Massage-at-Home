@@ -119,7 +119,11 @@ struct BodyMapView: View {
     var onTap: ((BodyZone) -> Void)?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var pulse = false
+
+    /// The zone that was last tapped. Drives a single short press-in, press-out
+    /// bounce so a tap feels answered. Nothing on this map animates on its own —
+    /// a body map that breathes forever is impossible to aim at.
+    @State private var tapped: BodyZone?
 
     var body: some View {
         GeometryReader { geo in
@@ -135,7 +139,6 @@ struct BodyMapView: View {
             .frame(width: size.width, height: size.height)
         }
         .aspectRatio(BodyGeometry.designSize.width / BodyGeometry.designSize.height, contentMode: .fit)
-        .onAppear { if !reduceMotion { pulse = true } }
     }
 
     @ViewBuilder
@@ -149,25 +152,39 @@ struct BodyMapView: View {
             scaledPath
                 .fill(fill(isSelected: isSelected, isBlocked: isBlocked))
             scaledPath
-                .stroke(K.sand50.opacity(0.9), lineWidth: 1.4)
+                .stroke(K.sand50.opacity(0.9), lineWidth: isSelected ? 2.6 : 1.4)
         }
         .opacity(isBlocked ? 0.42 : 1)
         .compositingGroup()
         .shadow(color: isSelected ? K.terracotta500.opacity(0.5) : .clear, radius: 9)
-        .scaleEffect(isSelected && pulse && !reduceMotion ? 1.012 : 1.0)
-        .animation(reduceMotion ? nil : .easeInOut(duration: 2).repeatForever(autoreverses: true), value: pulse)
         .clipShape(zoneClip(spec.clipToTorso, size: size))
-        .contentShape(scaledPath)
+        .scaleEffect(tapped == zone && !reduceMotion ? 1.045 : 1.0)
+        .animation(reduceMotion ? nil : .spring(response: 0.26, dampingFraction: 0.55), value: tapped)
+        // Hit area must match what you can actually see. Clipped zones used to
+        // stay tappable outside the torso, so neighbouring areas stole the tap.
+        .contentShape(HitShape(path: hitPath(clipToTorso: spec.clipToTorso, scaledPath, size: size)))
         .onTapGesture {
             guard let onTap else { return }
             Haptics.light()
+            tapped = zone
             onTap(zone)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.22) {
+                if tapped == zone { tapped = nil }
+            }
         }
         .accessibilityElement()
         .accessibilityAddTraits(.isButton)
         .accessibilityLabel(zone.title(front: front))
         .accessibilityHint(isBlocked ? "Not available with your health answers" : "Shows routines for this area")
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+    }
+
+    /// The visible region of a zone: intersected with the torso when the zone is
+    /// clipped to it, so taps land where the colour is.
+    private func hitPath(clipToTorso: Bool, _ scaledPath: Path, size: CGSize) -> Path {
+        guard clipToTorso else { return scaledPath }
+        let torso = BodyGeometry.scaled(BodyGeometry.torso(), to: size)
+        return Path(scaledPath.cgPath.intersection(torso.cgPath))
     }
 
     private func zoneClip(_ clip: Bool, size: CGSize) -> some Shape {
@@ -178,6 +195,12 @@ struct BodyMapView: View {
         if isBlocked { return K.clay200.opacity(0.5) }
         return isSelected ? K.terracotta500 : K.clay200
     }
+}
+
+/// A ready-made path used as a hit area.
+private struct HitShape: Shape {
+    let path: Path
+    func path(in rect: CGRect) -> Path { path }
 }
 
 private struct ClipPathShape: Shape {

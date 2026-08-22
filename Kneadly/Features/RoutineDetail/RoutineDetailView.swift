@@ -25,6 +25,10 @@ struct RoutineDetailView: View {
                         reviewedRow
                         positionRow
 
+                        if let video = VideoLibrary.video(for: routine.id) {
+                            RoutineVideoSection(video: video)
+                        }
+
                         SectionHeader(title: "The \(routine.stepCount) steps")
                         ForEach(Array(steps.enumerated()), id: \.element.id) { index, step in
                             StepPreviewRow(index: index + 1, step: step)

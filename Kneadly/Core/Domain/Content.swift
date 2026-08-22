@@ -45,6 +45,12 @@ struct Step: Identifiable, Codable, Sendable, Hashable {
 
     var pressureLevel: PressureLevel { PressureLevel.clamped(pressure) }
 
+    /// The photo that shows *this* technique on *this* body part, e.g.
+    /// `img.tech.neck.petrissage`. There are 88 such combinations across the
+    /// 225 steps, so 88 photographs cover every step precisely. Until one
+    /// exists on disk the view falls back to `heroImage`.
+    var techniqueImage: String { "img.tech.\(regionID).\(techniqueID)" }
+
     var overline: String {
         let region = ContentStore.regionTitle(regionID).uppercased()
         let technique = ContentStore.techniqueTitle(techniqueID).uppercased()

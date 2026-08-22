@@ -13,6 +13,16 @@ enum PhotoCache {
     private static var images: [String: UIImage] = [:]
     private static var misses: Set<String> = []
 
+    /// Tries each id in turn and returns the first that resolves. Lets a step
+    /// ask for its precise technique photo and quietly fall back to the region
+    /// photo until that technique's image has been shot.
+    static func firstImage(_ ids: [String]) -> UIImage? {
+        for id in ids where !id.isEmpty {
+            if let image = image(id) { return image }
+        }
+        return nil
+    }
+
     static func image(_ id: String) -> UIImage? {
         lock.lock(); defer { lock.unlock() }
         if let cached = images[id] { return cached }
@@ -36,13 +46,15 @@ enum PhotoCache {
 
 struct KPhoto: View {
     let id: String
+    /// Used when `id` has no image on disk yet.
+    var fallbackID: String?
     var placeholderHex: String?
     var showsGrade: Bool = true
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                if let image = PhotoCache.image(id) {
+                if let image = PhotoCache.firstImage([id, fallbackID ?? ""]) {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)

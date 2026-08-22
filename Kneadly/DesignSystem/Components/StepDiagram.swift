@@ -9,6 +9,9 @@ struct StepDiagram: View {
     var strokePath: StrokePath?
     var handPosition: HandPosition = .none
     var caption: String?
+    /// Inset mode: no caption, tighter margins, and no breathing glow — it sits
+    /// in the corner of a photo and must not compete with it.
+    var compact: Bool = false
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var dashPhase: CGFloat = 0
@@ -18,7 +21,7 @@ struct StepDiagram: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: KRadius.lg, style: .continuous)
+            RoundedRectangle(cornerRadius: compact ? KRadius.md : KRadius.lg, style: .continuous)
                 .fill(
                     LinearGradient(
                         colors: [Color(hex: "#241E1A"), Color(hex: "#171310")],
@@ -27,7 +30,7 @@ struct StepDiagram: View {
                 )
 
             RadialGradient(
-                colors: [K.terracotta500.opacity(reduceMotion ? 0.18 : (glow ? 0.26 : 0.14)), .clear],
+                colors: [K.terracotta500.opacity((reduceMotion || compact) ? 0.18 : (glow ? 0.26 : 0.14)), .clear],
                 center: .center, startRadius: 2, endRadius: 190
             )
             .allowsHitTesting(false)
@@ -37,9 +40,9 @@ struct StepDiagram: View {
             }
             .aspectRatio(BodyGeometry.designSize.width / BodyGeometry.designSize.height,
                          contentMode: .fit)
-            .padding(.vertical, 16)
+            .padding(.vertical, compact ? 7 : 16)
 
-            if let caption {
+            if let caption, !compact {
                 Text(caption)
                     .font(.system(size: 10.5, weight: .semibold))
                     .tracking(1.1)
@@ -52,10 +55,12 @@ struct StepDiagram: View {
                     .padding(.bottom, 10)
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: KRadius.lg, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: compact ? KRadius.md : KRadius.lg, style: .continuous))
         .onAppear {
             guard !reduceMotion else { return }
-            withAnimation(.easeInOut(duration: 2.2).repeatForever(autoreverses: true)) { glow = true }
+            if !compact {
+                withAnimation(.easeInOut(duration: 2.2).repeatForever(autoreverses: true)) { glow = true }
+            }
             withAnimation(.linear(duration: 1.3).repeatForever(autoreverses: false)) { dashPhase = -24 }
         }
         .accessibilityElement()

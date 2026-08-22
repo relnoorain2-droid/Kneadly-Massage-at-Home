@@ -33,7 +33,10 @@ extension LegalDocument {
              "Anonymous usage events — for example that a session was started or a paywall was shown. These carry no name, no email, no device identifier and no advertising ID. They cannot be linked back to you or to any individual. We use them only to understand which routines people find useful."),
 
             ("What we never collect",
-             "We do not collect your name, email address, phone number, contacts, location, photos, or health data. We do not use tracking of any kind. We do not use the advertising identifier. We do not sell, rent or share data with advertisers or data brokers, because we do not hold data that could be sold."),
+             "We do not collect your name, email address, phone number, contacts, location, photos, or health data. Kneadly itself does not track you across apps or websites, and does not use the advertising identifier. We do not sell, rent or share data with advertisers or data brokers, because we do not hold data that could be sold."),
+
+            ("Demonstration videos",
+             "Some routines include a free demonstration video hosted on YouTube, shown in YouTube's own player. We load these from youtube-nocookie.com, YouTube's privacy-enhanced address, which does not store viewing data unless you actually press play. Once you press play, YouTube receives that request directly and its own privacy policy applies to it — we never see who watched what. If you do not press play, nothing is sent. The videos belong to the teachers credited beneath them, not to us."),
 
             ("Purchases",
              "Subscriptions are handled entirely by Apple. We never see your payment details. Apple tells our app only whether an active subscription exists — nothing more."),
@@ -86,6 +89,9 @@ extension LegalDocument {
 
             ("Changes",
              "We may update these terms. Continued use after an update means you accept the revised terms."),
+
+            ("Demonstration videos",
+             "Some routines link to a demonstration video hosted on YouTube and shown in YouTube's own player. Those videos are made by the teachers credited beneath them and are not ours. They are free to watch and are never part of what a Kneadly Plus subscription pays for. We cannot control whether a video stays available, and your use of the YouTube player is also governed by YouTube's own terms."),
 
             ("Contact",
              "Questions can be sent to \(AppBrand.supportEmail).")
