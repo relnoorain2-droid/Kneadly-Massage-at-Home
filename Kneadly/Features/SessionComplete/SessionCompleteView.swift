@@ -40,7 +40,9 @@ struct SessionCompleteView: View {
                         .padding(.top, 96)
                         .padding(.bottom, 12)
 
-                    Text("Done.").font(.kDisplay(32))
+                    Text(praiseHeadline).font(.kDisplay(32))
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
                     Text(summaryLine)
                         .font(.kSubhead)
                         .foregroundStyle(K.textSecondary)
@@ -161,6 +163,16 @@ struct SessionCompleteView: View {
     }
 
     // MARK: - Stats
+
+    /// Warm, but never overclaiming. It praises the effort that just happened —
+    /// it does not tell anyone their pain is gone.
+    private var praiseHeadline: String {
+        if completedCount <= 1 { return "That's your first one." }
+        if currentStreak >= 7 { return "A full week. Really." }
+        if currentStreak >= 3 { return "\(currentStreak) days running." }
+        if completedCount % 10 == 0 { return "That's \(completedCount) sessions." }
+        return "Good work."
+    }
 
     private var summaryLine: String {
         let minutes = max(1, completed.seconds / 60)

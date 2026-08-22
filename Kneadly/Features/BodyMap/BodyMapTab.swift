@@ -8,6 +8,10 @@ struct BodyMapTab: View {
     @State private var searchText = ""
     @State private var showSearch = false
 
+    /// One-time nudge. Disappears for good after the first zone is opened, so
+    /// it teaches without nagging.
+    @AppStorage("bodyMap.hasTapped") private var hasTapped = false
+
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
@@ -17,8 +21,27 @@ struct BodyMapTab: View {
                                 blocked: blockedZones,
                                 front: front) { zone in
                         selected = zone
+                        hasTapped = true
                     }
                     .padding(.horizontal, 44)
+
+                    if !hasTapped {
+                        HStack(spacing: 7) {
+                            Image(systemName: "hand.tap")
+                                .font(.system(size: 13, weight: .semibold))
+                            Text("Tap a body area to see its routines")
+                                .font(.system(size: 13, weight: .semibold))
+                        }
+                        .foregroundStyle(K.bone)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 9)
+                        .background(K.terracotta500, in: Capsule())
+                        .shadow(color: K.ink900.opacity(0.22), radius: 10, y: 4)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                        .padding(.top, 4)
+                        .allowsHitTesting(false)
+                        .transition(.opacity)
+                    }
 
                     FrontBackToggle(front: $front)
                         .padding(.trailing, KSpace.md)

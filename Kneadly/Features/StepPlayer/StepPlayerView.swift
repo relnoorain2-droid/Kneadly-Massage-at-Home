@@ -240,6 +240,16 @@ struct StepPlayerView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
+                if let next = model.nextStep {
+                    NextUpRow(step: next)
+                        .padding(.top, 2)
+                        .padding(.bottom, 10)
+                } else {
+                    LastStepRow()
+                        .padding(.top, 2)
+                        .padding(.bottom, 10)
+                }
+
                 Spacer(minLength: 4)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -414,6 +424,10 @@ struct TransitionCard: View {
         ZStack {
             K.ink900.ignoresSafeArea()
             VStack(spacing: 16) {
+                Text(Encouragement.line(for: step.id))
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(K.sage300)
+                    .multilineTextAlignment(.center)
                 Text("CHANGE POSITION")
                     .font(.system(size: 10.5, weight: .bold))
                     .tracking(1.4)
@@ -429,5 +443,84 @@ struct TransitionCard: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Next: \(step.title)")
+    }
+}
+
+
+// MARK: - What happens next
+
+/// Removes the main source of anxiety in a timed sequence: not knowing what is
+/// about to be asked of you, or how much is left.
+struct NextUpRow: View {
+    let step: Step
+
+    var body: some View {
+        HStack(spacing: 11) {
+            BodyMapMini(zones: step.bodyMapZones, strokePath: nil)
+                .frame(width: 26)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text("COMING NEXT")
+                    .font(.system(size: 9.5, weight: .bold))
+                    .tracking(1)
+                    .foregroundStyle(K.bone.opacity(0.4))
+                Text(step.title)
+                    .font(.system(size: 13.5, weight: .semibold))
+                    .foregroundStyle(K.bone.opacity(0.8))
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            Spacer(minLength: 0)
+
+            Text("\(step.durationSeconds)s")
+                .font(.system(size: 12, weight: .medium))
+                .foregroundStyle(K.bone.opacity(0.45))
+        }
+        .padding(11)
+        .background(K.bone.opacity(0.055), in: RoundedRectangle(cornerRadius: KRadius.md, style: .continuous))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Coming next: \(step.title), \(step.durationSeconds) seconds")
+    }
+}
+
+struct LastStepRow: View {
+    var body: some View {
+        HStack(spacing: 9) {
+            Image(systemName: "checkmark.circle")
+                .font(.system(size: 15))
+                .foregroundStyle(K.sage300)
+            Text("Last step — you are nearly there.")
+                .font(.system(size: 13.5, weight: .semibold))
+                .foregroundStyle(K.bone.opacity(0.8))
+            Spacer(minLength: 0)
+        }
+        .padding(11)
+        .background(K.sage300.opacity(0.08), in: RoundedRectangle(cornerRadius: KRadius.md, style: .continuous))
+    }
+}
+
+// MARK: - Encouragement
+
+/// Short, quiet praise between steps.
+///
+/// Deterministic, not random: the same step always gets the same line, so the
+/// app never feels like it is generating flattery. Nothing here claims a
+/// therapeutic result — it acknowledges effort, which is all it should do.
+enum Encouragement {
+    private static let lines = [
+        "Nicely done.",
+        "That is the one — good pressure.",
+        "Good. Keep the breathing slow.",
+        "Well held.",
+        "That is exactly it.",
+        "Good work. Shake the hands out.",
+        "Steady hands. Nice.",
+        "Lovely pace."
+    ]
+
+    static func line(for stepID: String) -> String {
+        let hash = stepID.unicodeScalars.reduce(0) { ($0 &* 31 &+ Int($1.value)) & 0xFFFFFF }
+        return lines[hash % lines.count]
     }
 }
