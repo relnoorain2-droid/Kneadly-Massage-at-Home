@@ -1,4 +1,6 @@
 import Foundation
+import Network
+import Observation
 
 /// A demonstration video for a routine, played through YouTube's official
 /// embedded player.
@@ -16,7 +18,8 @@ import Foundation
 /// (`https://www.youtube.com/oembed?url=…`) — a valid response means the video
 /// exists *and* its owner allows embedding. Re-run that check before each
 /// release: creators can delete a video or switch embedding off at any time.
-struct RoutineVideo: Sendable, Hashable {
+struct RoutineVideo: Sendable, Hashable, Identifiable {
+    var id: String { videoID }
     let videoID: String
     let title: String
     let channel: String
@@ -124,4 +127,94 @@ enum VideoLibrary {
             title: "Soothing Partner Hand Massage",
             channel: "Goodful")
     ]
+}
+
+// MARK: - Per-region videos
+
+/// One video per body area. Combined with `map` above this means every step in
+/// the app resolves to something relevant: the app looks for the step's region
+/// first, then falls back to the routine the step belongs to.
+///
+/// Same rule as the routine videos — these are FREE. Never gate them.
+extension VideoLibrary {
+
+    static let regionMap: [String: RoutineVideo] = [
+        "scalp": .init(videoID: "DmZ0LcNDghI",
+                       title: "Head massage techniques",
+                       channel: "HM Massage"),
+        "face": .init(videoID: "YmSh7_rQ3ck",
+                      title: "Facial massage routine",
+                      channel: "North Nottinghamshire College"),
+        "jaw": .init(videoID: "glACOuj9voA",
+                     title: "Myofascial release for jaw and TMJ pain",
+                     channel: "Massage Sloth"),
+        "ears": .init(videoID: "tT5JafBisR8",
+                      title: "Reflexology techniques for the ears",
+                      channel: "Zion Massage College"),
+        "neck": .init(videoID: "UX18BCxtjZQ",
+                      title: "Massage techniques for the neck",
+                      channel: "Rebel Massage"),
+        "suboccipitals": .init(videoID: "bnMS6fhs3j4",
+                               title: "A technique for the suboccipital muscles",
+                               channel: "Erik Dalton"),
+        "shouldersUpperTrap": .init(videoID: "OsIQ6Vo3ViE",
+                                    title: "Upper trapezius technique for desk workers",
+                                    channel: "Melbourne Muscular Therapies"),
+        "upperBack": .init(videoID: "C9AvpcYNerg",
+                           title: "Rhomboids — pain between the shoulder blades",
+                           channel: "Massage Sloth"),
+        "lowerBack": .init(videoID: "EfT4VUSNHqQ",
+                           title: "Low back myofascial release techniques",
+                           channel: "Massage Sloth"),
+        "glutesHips": .init(videoID: "5n7m-hsNmsA",
+                            title: "Gluteal region and piriformis",
+                            channel: "Massage Sloth"),
+        "thigh": .init(videoID: "hgP7jK5gZRI",
+                       title: "Thigh massage — effleurage and petrissage",
+                       channel: "The Physio Channel"),
+        "calfShin": .init(videoID: "qOj3QSnL7LU",
+                          title: "The calves and Achilles tendon",
+                          channel: "Rebel Massage"),
+        "foot": .init(videoID: "EkSjTAAzNsQ",
+                      title: "Foot reflexology basics and routine",
+                      channel: "Massage Sloth"),
+        "hand": .init(videoID: "_Fx54W0-yZs",
+                      title: "Massage tutorial — the hand",
+                      channel: "Rebel Massage"),
+        "forearm": .init(videoID: "pB8oH3P_ZTw",
+                         title: "Forearm muscles and tennis elbow",
+                         channel: "John Gibbons"),
+        "upperArm": .init(videoID: "4lWoh_NWE1I",
+                          title: "Upper arm and biceps massage",
+                          channel: "Massage Therapeutics")
+    ]
+
+    /// Most specific video available for a step: its body region, else the
+    /// routine it belongs to. Returns nil when neither exists, and the Watch
+    /// button simply does not appear.
+    static func video(regionID: String, routineID: String?) -> RoutineVideo? {
+        if let r = regionMap[regionID] { return r }
+        if let id = routineID { return map[id] }
+        return nil
+    }
+}
+
+// MARK: - Is there a connection?
+
+/// The videos need the network; everything else in Kneadly does not. Rather
+/// than showing a Watch button that opens a blank rectangle, the button hides
+/// itself when there is nothing to stream over.
+@Observable
+final class Reachability {
+    private(set) var isOnline = true
+    private let monitor = NWPathMonitor()
+
+    init() {
+        monitor.pathUpdateHandler = { [weak self] path in
+            Task { @MainActor in self?.isOnline = path.status == .satisfied }
+        }
+        monitor.start(queue: DispatchQueue(label: "kneadly.reachability"))
+    }
+
+    deinit { monitor.cancel() }
 }

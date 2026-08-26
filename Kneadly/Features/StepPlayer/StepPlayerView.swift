@@ -20,6 +20,12 @@ struct StepPlayerView: View {
     @State private var log: SessionLog?
     @State private var showQuitConfirm = false
 
+    /// The video the Watch button opened, if any. The session pauses while it
+    /// plays and picks up again when the viewer closes it.
+    @State private var watching: RoutineVideo?
+    @State private var resumeAfterWatching = false
+    @State private var reachability = Reachability()
+
     var body: some View {
         ZStack {
             K.ink900.ignoresSafeArea()
@@ -45,6 +51,12 @@ struct StepPlayerView: View {
             case .background: model?.pause()
             default: break
             }
+        }
+        .fullScreenCover(item: $watching, onDismiss: {
+            if resumeAfterWatching { model?.play() }
+            resumeAfterWatching = false
+        }) { video in
+            VideoFullScreen(video: video)
         }
         .confirmationDialog("End this session?", isPresented: $showQuitConfirm, titleVisibility: .visible) {
             Button("End session", role: .destructive) { quit() }
@@ -142,6 +154,18 @@ struct StepPlayerView: View {
                 .padding(10)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
                 .accessibilityLabel("\(model.remaining) seconds remaining")
+
+            if reachability.isOnline,
+               let video = VideoLibrary.video(regionID: model.step.regionID,
+                                              routineID: request.routine.id) {
+                WatchButton {
+                    resumeAfterWatching = model.isPlaying
+                    model.pause()
+                    watching = video
+                }
+                .padding(10)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            }
 
             VStack(alignment: .trailing, spacing: 3) {
                 Text("PRESS HERE")

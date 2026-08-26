@@ -120,3 +120,79 @@ struct RoutineVideoSection: View {
         }
     }
 }
+
+// MARK: - Full screen
+
+/// The video, filling the screen, opened from a Watch button on any step.
+///
+/// The close control sits in a bar *above* the player, never on top of it —
+/// YouTube's Required Minimum Functionality rules forbid putting overlays,
+/// frames or any visual element in front of an embedded player.
+struct VideoFullScreen: View {
+    let video: RoutineVideo
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack(alignment: .top, spacing: 12) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(video.title)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(K.bone)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("\(video.channel) · on YouTube")
+                        .font(.kCaption)
+                        .foregroundStyle(K.bone.opacity(0.55))
+                }
+                Spacer(minLength: 0)
+                Button { dismiss() } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(K.bone)
+                        .frame(width: 38, height: 38)
+                        .background(K.bone.opacity(0.13), in: Circle())
+                }
+                .accessibilityLabel("Close video")
+            }
+            .padding(.horizontal, KSpace.lg)
+            .padding(.top, KSpace.lg)
+            .padding(.bottom, KSpace.md)
+
+            YouTubeVideoView(videoID: video.videoID)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            Text("Free to watch, for everyone. This video belongs to \(video.channel), not to Kneadly, and is not part of what a subscription pays for.")
+                .font(.system(size: 11))
+                .foregroundStyle(K.bone.opacity(0.4))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, KSpace.xl)
+                .padding(.vertical, KSpace.md)
+        }
+        .background(K.ink900.ignoresSafeArea())
+        .preferredColorScheme(.dark)
+    }
+}
+
+/// The small "Watch" pill shown on a step.
+struct WatchButton: View {
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 5) {
+                Image(systemName: "play.circle.fill")
+                    .font(.system(size: 13, weight: .semibold))
+                Text("Watch")
+                    .font(.system(size: 12.5, weight: .semibold))
+            }
+            .foregroundStyle(K.bone)
+            .padding(.horizontal, 11)
+            .padding(.vertical, 7)
+            .background(.ultraThinMaterial, in: Capsule())
+        }
+        .buttonStyle(PressScaleStyle())
+        .accessibilityLabel("Watch a video of this technique")
+    }
+}
