@@ -30,3 +30,9 @@ vendor/bundle
 
 # macOS
 .DS_Store
+
+# Raw Flow output and contact sheets — the installed, resized copies live in
+# Kneadly/Resources/Photos. Keeping 67 MB of originals in git is not worth it.
+design/flow/
+design/sheets/
+design/verify/
