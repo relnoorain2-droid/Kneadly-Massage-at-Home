@@ -18,6 +18,12 @@ final class AppEnvironment {
     var showPaywall: PaywallTrigger?
     var completedSession: CompletedSession?
 
+    /// Tension the user rated in Prepare, carried into the session log.
+    var pendingTensionBefore: Int?
+    /// Set when a routine was launched as a program day, so completing it
+    /// advances that program.
+    var activeProgramID: String?
+
     init() {
         content.load()
         narration.enabled = user.voiceEnabled

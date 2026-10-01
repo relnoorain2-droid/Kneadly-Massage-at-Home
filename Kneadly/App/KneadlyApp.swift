@@ -28,6 +28,9 @@ struct KneadlyApp: App {
                 .tint(K.terracotta500)
                 .preferredColorScheme(nil)
                 .task { await env.bootstrap() }
+                #if DEBUG
+                .task { ScreenshotMode.apply(env: env, context: container.mainContext) }
+                #endif
         }
     }
 }

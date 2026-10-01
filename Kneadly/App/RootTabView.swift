@@ -1,7 +1,11 @@
 import SwiftUI
 
 struct RootTabView: View {
+    #if DEBUG
+    @State private var selection = ScreenshotMode.initialTab
+    #else
     @State private var selection = 0
+    #endif
 
     var body: some View {
         TabView(selection: $selection) {

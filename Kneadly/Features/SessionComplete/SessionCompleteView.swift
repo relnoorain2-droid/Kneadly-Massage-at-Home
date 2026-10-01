@@ -13,6 +13,7 @@ struct SessionCompleteView: View {
     @State private var feel: FeelAfter?
     @State private var pressure: PressureFeedback?
     @State private var bloom = false
+    @State private var tensionAfter: Int?
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -56,7 +57,10 @@ struct SessionCompleteView: View {
                     }
                     .padding(.bottom, 8)
 
-                    SectionHeader(title: "How does it feel now?")
+                    reliefBlock
+                        .padding(.top, 8)
+
+                    SectionHeader(title: "Overall, you feel…")
                     HStack(spacing: 8) {
                         ForEach(FeelAfter.allCases, id: \.self) { option in
                             choiceButton(option.title, isOn: feel == option) { select(feel: option) }
@@ -95,6 +99,53 @@ struct SessionCompleteView: View {
         .onAppear { bloom = true }
     }
 
+    // MARK: - Relief score
+
+    private var tensionBefore: Int? { currentLog?.tensionBefore }
+
+    @ViewBuilder
+    private var reliefBlock: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            TensionPicker(value: Binding(
+                get: { tensionAfter },
+                set: { newValue in
+                    tensionAfter = newValue
+                    currentLog?.tensionAfter = newValue
+                    try? context.save()
+                }
+            ), title: tensionBefore == nil ? "How tight does it feel now?" : "And now?")
+
+            if let before = tensionBefore, let after = tensionAfter {
+                HStack(spacing: 10) {
+                    Image(systemName: after < before ? "arrow.down.circle.fill" : "equal.circle.fill")
+                        .font(.system(size: 22))
+                        .foregroundStyle(after < before ? K.sage600 : K.ink300)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(ReliefStats.headline(before: before, after: after))
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(K.textPrimary)
+                        Text("Saved to your relief score on the Me tab.")
+                            .font(.system(size: 11.5))
+                            .foregroundStyle(K.textSecondary)
+                    }
+                }
+                .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+        }
+        .padding(14)
+        .background(K.surface, in: RoundedRectangle(cornerRadius: KRadius.md, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: KRadius.md, style: .continuous).strokeBorder(K.separator, lineWidth: 1))
+        .animation(.easeOut(duration: 0.25), value: tensionAfter)
+    }
+
+    /// Ask after the first session, then only every fourth. A paywall after
+    /// every single session is the fastest route to one-star reviews.
+    private var shouldOfferPlus: Bool {
+        guard !env.subscriptions.isPlus else { return false }
+        let n = env.user.completedSessionCount
+        return n <= 1 || n % 4 == 0
+    }
+
     private func choiceButton(_ title: String, isOn: Bool, action: @escaping () -> Void) -> some View {
         Button {
             Haptics.selection()
@@ -116,7 +167,7 @@ struct SessionCompleteView: View {
     private var footer: some View {
         VStack(spacing: 10) {
             PrimaryButton(title: primaryTitle) {
-                let shouldShowPaywall = !env.subscriptions.isPlus
+                let shouldShowPaywall = shouldOfferPlus
                 env.completedSession = nil
                 dismiss()
                 if shouldShowPaywall {
@@ -138,7 +189,7 @@ struct SessionCompleteView: View {
     }
 
     private var primaryTitle: String {
-        env.subscriptions.isPlus ? "Done" : "See what's next"
+        shouldOfferPlus ? "See what's next" : "Done"
     }
 
     // MARK: - Feedback

@@ -16,6 +16,10 @@ final class SessionLog {
     var pressureFeedbackRaw: String?
     var partnerName: String?
     var abandonedAtStepIndex: Int?
+    /// Relief Score: tension 0–10 before and after. Optional so older stores
+    /// migrate without a schema version bump.
+    var tensionBefore: Int?
+    var tensionAfter: Int?
 
     init(routineID: String,
          routineTitle: String,

@@ -4,6 +4,8 @@ import SwiftData
 struct TodayView: View {
     @Environment(AppEnvironment.self) private var env
     @Query(sort: \SessionLog.startedAt, order: .reverse) private var logs: [SessionLog]
+    @Query(sort: \ProgramProgress.startedAt, order: .reverse) private var programProgress: [ProgramProgress]
+    @Environment(\.modelContext) private var context
     @State private var modeFilter: SessionMode?
 
     var body: some View {
@@ -12,7 +14,8 @@ struct TodayView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     greeting
                     filters
-                    if let program = activeProgram { programCard(program) }
+                    if let active = activeProgram { programCard(active.program, progress: active.progress) }
+                    QuickFixRow()
                     suggestionSection
                     becauseSection
                     programsSection
@@ -104,15 +107,9 @@ struct TodayView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 11) {
                     ForEach(env.content.programs) { program in
-                        Button {
-                            if program.isPremium && !env.subscriptions.isPlus {
-                                env.showPaywall = .lockedProgram(program.id)
-                            } else if let first = program.days.first,
-                                      let routine = env.content.routine(first.routineID) {
-                                env.open(routine)
-                            }
-                        } label: {
+                        Button { launch(program) } label: {
                             ProgramCard(program: program,
+                                        progress: progress(for: program)?.progress(of: program.dayCount) ?? 0,
                                         locked: program.isPremium && !env.subscriptions.isPlus)
                         }
                         .buttonStyle(PressScaleStyle())
@@ -131,34 +128,85 @@ struct TodayView: View {
         .padding(.horizontal, KSpace.screenMargin)
     }
 
-    private func programCard(_ program: Program) -> some View {
-        Button {
-            if let day = program.days.first(where: { $0.day == 1 }),
-               let routine = env.content.routine(day.routineID) { env.open(routine) }
-        } label: {
+    private func programCard(_ program: Program, progress: ProgramProgress) -> some View {
+        let day = program.days.first(where: { $0.day == progress.currentDay }) ?? program.days[0]
+        let routine = env.content.routine(day.routineID)
+        return Button { launch(program) } label: {
             HStack(spacing: 12) {
-                Image(systemName: "moon.stars")
-                    .font(.system(size: 19))
-                    .foregroundStyle(K.terracotta600)
-                    .frame(width: 44, height: 44)
-                    .background(K.terracotta500.opacity(0.1), in: Circle())
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(program.title).font(.system(size: 14, weight: .semibold)).foregroundStyle(K.textPrimary)
-                    ProgressBar(value: 0.28).frame(height: 5)
-                    Text("Day 1 of \(program.dayCount)").font(.kCaption).foregroundStyle(K.textSecondary)
+                ZStack {
+                    Circle().stroke(K.sand200, lineWidth: 4)
+                    Circle()
+                        .trim(from: 0, to: progress.progress(of: program.dayCount))
+                        .stroke(K.terracotta500, style: StrokeStyle(lineWidth: 4, lineCap: .round))
+                        .rotationEffect(.degrees(-90))
+                    Text("\(day.day)")
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundStyle(K.terracotta700)
                 }
+                .frame(width: 48, height: 48)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("\(program.title) · Day \(day.day) of \(program.dayCount)")
+                        .kOverline(K.terracotta600)
+                    Text(routine?.title ?? "Today's session")
+                        .font(.system(size: 15, weight: .semibold)).foregroundStyle(K.textPrimary)
+                    if let note = day.note {
+                        Text(note).font(.kCaption).foregroundStyle(K.textSecondary).lineLimit(1)
+                    }
+                }
+                Spacer(minLength: 0)
                 Image(systemName: "chevron.right").font(.system(size: 12, weight: .semibold)).foregroundStyle(K.ink300)
             }
             .kCard(padding: 13)
         }
         .buttonStyle(PressScaleStyle())
         .padding(.horizontal, KSpace.screenMargin)
+        .padding(.bottom, KSpace.sm)
+        .accessibilityLabel("Continue \(program.title), day \(day.day) of \(program.dayCount): \(routine?.title ?? "")")
+    }
+
+    // MARK: - Programs
+
+    private func progress(for program: Program) -> ProgramProgress? {
+        programProgress.first { $0.programID == program.id }
+    }
+
+    /// Start or continue a program at its current day. Completing that day's
+    /// routine advances it (see StepPlayerView.advanceProgramIfNeeded).
+    private func launch(_ program: Program) {
+        if program.isPremium && !env.subscriptions.isPlus {
+            env.showPaywall = .lockedProgram(program.id)
+            return
+        }
+        let current: ProgramProgress
+        if let existing = progress(for: program) {
+            if existing.completedDays.count >= program.dayCount {   // finished: go again
+                existing.completedDays = []
+                existing.currentDay = 1
+                existing.startedAt = Date()
+            }
+            current = existing
+        } else {
+            current = ProgramProgress(programID: program.id)
+            context.insert(current)
+        }
+        try? context.save()
+        guard
+              let day = program.days.first(where: { $0.day == current.currentDay }) ?? program.days.first,
+              let routine = env.content.routine(day.routineID) else { return }
+        env.activeProgramID = program.id
+        env.open(routine)
     }
 
     // MARK: - Data
 
     private var suggestion: Routine? {
-        env.content.suggestion(modes: modeFilter.map { [$0] } ?? env.user.selectedModes,
+        if let id = ReliefStats.bestRoutineID(logs),
+           let proven = env.content.routine(id),
+           !env.isLocked(proven),
+           modeFilter == nil || proven.mode == modeFilter {
+            return proven
+        }
+        return env.content.suggestion(modes: modeFilter.map { [$0] } ?? env.user.selectedModes,
                                zones: env.user.soreZones,
                                maxMinutes: env.user.maxMinutes,
                                isPlus: env.subscriptions.isPlus)
@@ -185,8 +233,16 @@ struct TodayView: View {
         return "Popular right now"
     }
 
-    private var activeProgram: Program? {
-        env.content.programs.first
+    /// The most recently started program that isn't finished — real progress,
+    /// not a placeholder.
+    private var activeProgram: (program: Program, progress: ProgramProgress)? {
+        for record in programProgress {
+            guard let program = env.content.programs.first(where: { $0.id == record.programID }),
+                  record.completedDays.count < program.dayCount else { continue }
+            if program.isPremium && !env.subscriptions.isPlus { continue }
+            return (program, record)
+        }
+        return nil
     }
 
     private var timeOfDayGreeting: String {

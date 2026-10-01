@@ -396,6 +396,8 @@ struct StepPlayerView: View {
                                mode: request.routine.mode,
                                stepsTotal: steps.count)
         entry.partnerName = request.partnerName
+        entry.tensionBefore = env.pendingTensionBefore
+        env.pendingTensionBefore = nil
         context.insert(entry)
         log = entry
 
@@ -418,6 +420,7 @@ struct StepPlayerView: View {
             log.durationSeconds = seconds
             log.stepsCompleted = stepsCompleted
         }
+        advanceProgramIfNeeded()
         try? context.save()
         env.user.completedSessionCount += 1
         env.user.save()
@@ -426,6 +429,18 @@ struct StepPlayerView: View {
                                                 seconds: seconds,
                                                 stepsCompleted: stepsCompleted,
                                                 logID: log?.id)
+    }
+
+    /// If this routine was launched as today's program day, mark the day done.
+    private func advanceProgramIfNeeded() {
+        defer { env.activeProgramID = nil }
+        guard let programID = env.activeProgramID,
+              let program = env.content.programs.first(where: { $0.id == programID }) else { return }
+        let descriptor = FetchDescriptor<ProgramProgress>(predicate: #Predicate<ProgramProgress> { $0.programID == programID })
+        guard let progress = try? context.fetch(descriptor).first,
+              let day = program.days.first(where: { $0.day == progress.currentDay }),
+              day.routineID == request.routine.id else { return }
+        progress.complete(day: day.day, of: program.dayCount)
     }
 
     private func quit() {

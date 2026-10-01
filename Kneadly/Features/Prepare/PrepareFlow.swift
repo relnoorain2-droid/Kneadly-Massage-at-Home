@@ -5,6 +5,8 @@ struct PrepareFlow: View {
     let onStart: () -> Void
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppEnvironment.self) private var env
+    @State private var tension: Int?
     @State private var page = 0
     @State private var checked: Set<String> = []
     @State private var giverAgreed = false
@@ -250,9 +252,22 @@ struct PrepareFlow: View {
     // MARK: - Footer
 
     private var footer: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 12) {
+            if page == 0 {
+                TensionPicker(value: $tension)
+                    .padding(14)
+                    .background(K.surface, in: RoundedRectangle(cornerRadius: KRadius.md, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: KRadius.md, style: .continuous)
+                        .strokeBorder(K.separator, lineWidth: 1))
+                    .padding(.horizontal, KSpace.screenMargin)
+            }
             PrimaryButton(title: footerTitle, isEnabled: footerEnabled) {
-                if page < pageCount - 1 { page += 1 } else { onStart() }
+                if page < pageCount - 1 {
+                    page += 1
+                } else {
+                    env.pendingTensionBefore = tension
+                    onStart()
+                }
             }
             .padding(.horizontal, KSpace.screenMargin)
             .padding(.bottom, KSpace.md)

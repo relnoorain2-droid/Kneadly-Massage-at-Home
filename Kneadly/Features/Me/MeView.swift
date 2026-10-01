@@ -8,6 +8,8 @@ struct MeView: View {
     @Query(sort: \PartnerProfile.createdAt) private var partners: [PartnerProfile]
     @State private var showAddPartner = false
     @State private var newPartnerName = ""
+    @State private var deskBreaks = ReminderScheduler.deskBreaksEnabled
+    @State private var notificationsDenied = false
 
     var body: some View {
         NavigationStack {
@@ -21,6 +23,9 @@ struct MeView: View {
                         StatTile(value: totalTimeLabel, label: "Total")
                     }
                     .padding(.top, 14)
+
+                    SectionHeader(title: "Is it working?")
+                    ReliefCard(logs: logs)
 
                     SectionHeader(title: "Partners")
                     ForEach(partners) { partner in
@@ -143,6 +148,38 @@ struct MeView: View {
                 set: { env.user.autoAdvance = $0; env.user.save() }
             ))
 
+            settingToggle("Daily reminder", systemImage: "bell", isOn: Binding(
+                get: { env.user.remindersEnabled },
+                set: { on in setDailyReminder(on) }
+            ))
+            if env.user.remindersEnabled {
+                HStack(spacing: 12) {
+                    Image(systemName: "clock").font(.system(size: 14)).foregroundStyle(K.terracotta600).frame(width: 24)
+                    DatePicker("Remind me at", selection: Binding(
+                        get: { reminderDate },
+                        set: { date in
+                            let c = Calendar.current.dateComponents([.hour, .minute], from: date)
+                            env.user.reminderHour = c.hour ?? 21
+                            env.user.reminderMinute = c.minute ?? 30
+                            env.user.save()
+                            ReminderScheduler.scheduleDaily(enabled: true, hour: env.user.reminderHour, minute: env.user.reminderMinute)
+                        }
+                    ), displayedComponents: .hourAndMinute)
+                    .font(.kCallout)
+                }
+                .padding(.horizontal, 14).padding(.vertical, 8)
+                .overlay(alignment: .bottom) { Divider().overlay(K.separator).padding(.leading, 50) }
+            }
+            settingToggle("Desk-break nudges (weekdays)", systemImage: "desktopcomputer", isOn: Binding(
+                get: { deskBreaks },
+                set: { on in setDeskBreaks(on) }
+            ))
+            if notificationsDenied {
+                Text("Notifications are off for Kneadly. Turn them on in Settings › Notifications › Kneadly.")
+                    .font(.system(size: 11.5)).foregroundStyle(K.stop)
+                    .padding(.horizontal, 14).padding(.vertical, 8)
+            }
+
             NavigationLink { HealthAnswersView() } label: {
                 settingRow("Health answers", systemImage: "heart.text.square", value: "\(env.user.healthAnswers.count)")
             }
@@ -179,6 +216,36 @@ struct MeView: View {
         .padding(.horizontal, 14).padding(.vertical, 13)
         .contentShape(Rectangle())
         .overlay(alignment: .bottom) { Divider().overlay(K.separator).padding(.leading, 50) }
+    }
+
+    // MARK: - Reminders
+
+    private var reminderDate: Date {
+        Calendar.current.date(bySettingHour: env.user.reminderHour, minute: env.user.reminderMinute,
+                              second: 0, of: Date()) ?? Date()
+    }
+
+    private func setDailyReminder(_ on: Bool) {
+        Task {
+            if on {
+                guard await ReminderScheduler.requestPermission() else { notificationsDenied = true; return }
+            }
+            notificationsDenied = false
+            env.user.remindersEnabled = on
+            env.user.save()
+            ReminderScheduler.scheduleDaily(enabled: on, hour: env.user.reminderHour, minute: env.user.reminderMinute)
+        }
+    }
+
+    private func setDeskBreaks(_ on: Bool) {
+        Task {
+            if on {
+                guard await ReminderScheduler.requestPermission() else { notificationsDenied = true; return }
+            }
+            notificationsDenied = false
+            deskBreaks = on
+            ReminderScheduler.scheduleDeskBreaks(enabled: on)
+        }
     }
 
     // MARK: - Data

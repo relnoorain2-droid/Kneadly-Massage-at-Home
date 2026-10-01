@@ -36,3 +36,4 @@ vendor/bundle
 design/flow/
 design/sheets/
 design/verify/
+design/*.tgz

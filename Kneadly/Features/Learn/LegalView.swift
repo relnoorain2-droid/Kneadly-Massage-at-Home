@@ -27,7 +27,7 @@ extension LegalDocument {
              "Kneadly is built to know as little about you as possible. There is no account. Your health answers never leave your phone. We cannot see what routines you do, who you massage, or anything you enter."),
 
             ("What stays on your device only",
-             "Your health screening answers. Any partner profiles you create, including their names and any sensitive areas you note. Your session history, streaks and preferences. All of this is stored in your phone's own storage. It is never uploaded to us, never synced to our servers, and we have no way to read it."),
+             "Your health screening answers. Any partner profiles you create, including their names and any sensitive areas you note. Your session history, streaks, relief ratings and preferences. All of this is stored in your phone's own storage. It is never uploaded to us, never synced to our servers, and we have no way to read it."),
 
             ("What we do collect",
              "Anonymous usage events — for example that a session was started or a paywall was shown. These carry no name, no email, no device identifier and no advertising ID. They cannot be linked back to you or to any individual. We use them only to understand which routines people find useful."),
@@ -40,6 +40,9 @@ extension LegalDocument {
 
             ("Purchases",
              "Subscriptions are handled entirely by Apple. We never see your payment details. Apple tells our app only whether an active subscription exists — nothing more."),
+
+            ("Reminders",
+             "If you turn on reminders, Kneadly schedules them on your phone with Apple's local notifications. Nothing is sent to us or to any server, and no push token is created."),
 
             ("Apple Health",
              "If you choose to allow it, Kneadly can write completed sessions to the Health app as mindful minutes. This is optional and off unless you turn it on. We only write; we never read anything from Health."),
