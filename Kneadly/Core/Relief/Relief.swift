@@ -106,19 +106,24 @@ enum ReliefStats {
     }
 
     static func byRoutine(_ entries: [ReliefEntry]) -> [RoutineRelief] {
-        Dictionary(grouping: entries, by: \.routineID).map { id, group in
-            RoutineRelief(id: id,
-                          title: group.last?.routineTitle ?? id,
-                          sessions: group.count,
-                          averageBefore: Double(group.map(\.before).reduce(0, +)) / Double(group.count),
-                          averageAfter: Double(group.map(\.after).reduce(0, +)) / Double(group.count))
+        let groups: [String: [ReliefEntry]] = Dictionary(grouping: entries, by: { $0.routineID })
+        var result: [RoutineRelief] = []
+        for (id, group) in groups {
+            let count = Double(group.count)
+            let beforeSum: Int = group.reduce(0) { $0 + $1.before }
+            let afterSum: Int = group.reduce(0) { $0 + $1.after }
+            let title: String = group.last?.routineTitle ?? id
+            result.append(RoutineRelief(id: id, title: title, sessions: group.count,
+                                        averageBefore: Double(beforeSum) / count,
+                                        averageAfter: Double(afterSum) / count))
         }
-        .sorted { $0.averageDrop > $1.averageDrop }
+        return result.sorted { $0.averageDrop > $1.averageDrop }
     }
 
     static func averageDrop(_ entries: [ReliefEntry]) -> Double {
         guard !entries.isEmpty else { return 0 }
-        return Double(entries.map(\.drop).reduce(0, +)) / Double(entries.count)
+        let total: Int = entries.reduce(0) { $0 + $1.drop }
+        return Double(total) / Double(entries.count)
     }
 
     /// The routine that has helped this person most, once there is enough
