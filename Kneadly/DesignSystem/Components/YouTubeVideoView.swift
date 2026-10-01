@@ -36,8 +36,27 @@ struct YouTubeVideoView: UIViewRepresentable {
     func updateUIView(_ web: WKWebView, context: Context) {
         guard context.coordinator.loadedID != videoID else { return }
         context.coordinator.loadedID = videoID
-        web.loadHTMLString(Self.html(for: videoID),
-                           baseURL: URL(string: "https://www.youtube.com"))
+        web.load(Self.request(for: videoID))
+    }
+
+    /// YouTube refuses embeds that arrive without an identifiable referrer
+    /// ("This video is unavailable" / error 152-153). Its Required Minimum
+    /// Functionality rules ask mobile apps to identify themselves with an
+    /// HTTP Referer and `origin` built from the bundle ID, so the embed page
+    /// is loaded directly with both rather than injected as HTML.
+    static func request(for id: String) -> URLRequest {
+        let bundle = (Bundle.main.bundleIdentifier ?? "com.kneadly-massage.app").lowercased()
+        let origin = "https://\(bundle)"
+        var components = URLComponents(string: "https://www.youtube-nocookie.com/embed/\(id)")!
+        components.queryItems = [
+            URLQueryItem(name: "playsinline", value: "1"),
+            URLQueryItem(name: "rel", value: "0"),
+            URLQueryItem(name: "origin", value: origin),
+            URLQueryItem(name: "widget_referrer", value: origin)
+        ]
+        var request = URLRequest(url: components.url!)
+        request.setValue(origin, forHTTPHeaderField: "Referer")
+        return request
     }
 
     static func dismantleUIView(_ web: WKWebView, coordinator: Coordinator) {

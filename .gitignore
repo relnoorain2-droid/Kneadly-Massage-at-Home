@@ -37,3 +37,5 @@ design/flow/
 design/sheets/
 design/verify/
 design/*.tgz
+design/shots/
+design/*.jpg

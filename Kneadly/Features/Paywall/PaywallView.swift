@@ -156,7 +156,8 @@ struct PaywallView: View {
         let price = env.subscriptions.priceString(plan)
         switch plan {
         case .weekly:
-            return "\(price)/week · 3 days free"
+            if let trial = trialLabel(.weekly) { return "\(price)/week · \(trial)" }
+            return "\(price)/week"
         case .monthly:
             return "\(price)/month"
         case .annual:
@@ -171,19 +172,38 @@ struct PaywallView: View {
 
     private var ctaTitle: String {
         if isPurchasing { return "One moment…" }
-        guard selectedPlan != .lifetime, env.subscriptions.hasIntroOffer(selectedPlan) else {
-            return "Continue"
+        if let trial = trialLabel(selectedPlan) { return "Start \(trial)" }
+        return "Continue"
+    }
+
+    /// The real introductory offer from the App Store, e.g. "7-day free trial".
+    /// Never hard-coded: promising a trial that isn't configured is a
+    /// Guideline 3.1.2 rejection.
+    private func trialLabel(_ plan: SubscriptionService.PlanID) -> String? {
+        guard plan != .lifetime,
+              let offer = env.subscriptions.product(plan)?.subscription?.introductoryOffer,
+              offer.paymentMode == .freeTrial else { return nil }
+        let n = offer.period.value
+        let unit: String
+        switch offer.period.unit {
+        case .day: unit = "day"
+        case .week: unit = "week"
+        case .month: unit = "month"
+        case .year: unit = "year"
+        @unknown default: return "free trial"
         }
-        switch selectedPlan {
-        case .weekly: return "Start 3-day free trial"
-        case .annual: return "Start 7-day free trial"
-        default: return "Continue"
-        }
+        return "\(n)-\(unit) free trial"
     }
 
     /// Apple requires the paywall itself to state the subscription title, its
     /// length, its price, and that it auto-renews until cancelled (Guideline 3.1.2).
     private var fineprint: String {
+        let base = basePrint
+        guard let trial = trialLabel(selectedPlan) else { return base }
+        return "Includes a \(trial). If you don't cancel at least 24 hours before it ends, the subscription below begins. " + base
+    }
+
+    private var basePrint: String {
         let price = env.subscriptions.priceString(selectedPlan)
         switch selectedPlan {
         case .lifetime:
