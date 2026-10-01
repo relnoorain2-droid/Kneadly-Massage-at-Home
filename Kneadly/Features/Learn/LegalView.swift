@@ -63,9 +63,12 @@ extension LegalDocument {
 
     static let terms = LegalDocument(
         id: "terms",
-        title: "Terms of Use",
+        title: "Terms of Use (EULA)",
         updated: "Last updated August 2026",
         sections: [
+            ("Licence agreement",
+             "Your use of Kneadly is governed by Apple's Licensed Application End User License Agreement (the Standard EULA), available at apple.com/legal/internet-services/itunes/dev/stdeula, together with these terms. Where they differ, these terms add to the Standard EULA."),
+
             ("Not medical advice",
              "Kneadly is a wellness and education app. It does not provide medical advice, diagnosis or treatment, and it is not a substitute for care from a qualified healthcare professional. Always talk to a doctor before starting massage if you have a medical condition, are pregnant, or are recovering from injury or surgery."),
 

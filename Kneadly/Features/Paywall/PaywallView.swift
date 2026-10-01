@@ -49,13 +49,19 @@ struct PaywallView: View {
 
                 HStack(spacing: 14) {
                     Button("Restore") { Task { await env.subscriptions.restore() } }
-                    Button("Terms of Use") { legalDocument = .terms }
+                    Button("Terms of Use (EULA)") { legalDocument = .terms }
                     Button("Privacy Policy") { legalDocument = .privacy }
                 }
                 .font(.system(size: 11.5))
                 .foregroundStyle(K.bone.opacity(0.5))
                 .frame(maxWidth: .infinity)
                 .padding(.top, 11)
+
+                Link("Apple Standard EULA", destination: AppBrand.appleEULA)
+                    .font(.system(size: 11))
+                    .foregroundStyle(K.bone.opacity(0.5))
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 4)
 
                 Text(fineprint)
                     .font(.system(size: 11))

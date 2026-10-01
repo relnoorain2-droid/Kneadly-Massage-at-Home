@@ -6,9 +6,10 @@ enum AppBrand {
     static let name = "Kneadly"
     static let tagline = "Good hands, guided."
     static let bundleID = "com.kneadly-Massage.app"
-    static let supportEmail = "support@kneadly.app"
-    static let privacyURL = URL(string: "https://kneadly.app/privacy")!
-    static let termsURL = URL(string: "https://kneadly.app/terms")!
+    static let supportEmail = "relnoorain@gmail.com"
+    /// Apple's Licensed Application End User License Agreement, which governs
+    /// Kneadly alongside the in-app Terms of Use.
+    static let appleEULA = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
 
     static var version: String {
         Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
